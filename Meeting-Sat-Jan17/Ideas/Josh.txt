@@ -9,6 +9,8 @@ Feature Ideas:
 		-at what point is a derivation of the original idea, really not related to the original idea
 		-better stated, do we allow seeders to place constraints/limitations on parts of their idea that are fundamental
 			i.e. a penut-butter cup cookie can/cannot morph into a salt and vinegar pretzel
+		-(Possibly, you could allow the seeder so many derivations, say five, and he labels those 5 derivations as 
+			originating from his original idea.  Beyond that he doesn't have claim to the derivations. Just a thought (Taylor was here :)))
 			
 	sharing
 		-allow seeders / anyone else interested to share their ideas on facebook, pintrest, twitter, etc
