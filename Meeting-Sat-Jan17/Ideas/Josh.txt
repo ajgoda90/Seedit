@@ -1,0 +1,44 @@
+Feature Ideas:
+
+	credibility
+		-some people are just naturally better at picking winners / knowing a good idea
+		-should the votes of people with a proven record of seeding/contributing to 
+		 good ideas (not sure how we define a "good idea") be prorated higher?
+		 
+	seeding process
+		-at what point is a derivation of the original idea, really not related to the original idea
+		-better stated, do we allow seeders to place constraints/limitations on parts of their idea that are fundamental
+			i.e. a penut-butter cup cookie can/cannot morph into a salt and vinegar pretzel
+			
+	sharing
+		-allow seeders / anyone else interested to share their ideas on facebook, pintrest, twitter, etc
+		
+	categories (kind of obvious)
+		-in order for anyone interested in actually making these ideas real, we need a process to quickly drill
+		 down into a specific genre of idea and see whats the most popular
+		
+
+Organization
+	good thread:
+		http://programmers.stackexchange.com/questions/107503/is-it-common-to-separate-back-end-and-front-end-into-two-positions-on-web-develo
+
+	Full-Stack, Split-Stack, Other
+		Full-Stack = each individual is in charge of specific features (from database -> UI)
+		Split-Stack = split into Front-End and Back-End teams ==> REST API
+		
+		
+Technology
+	firebase
+		-it sounds cool, but i think learning/using it will be as much work as doing our own API
+		-is anyone really good at json / non scheme databases (like mongo)
+		
+	Node.js / Express
+		-this class is about the experience, and i think seeing both front and back end is important to 
+		 the engineering process
+		-Node.js / some other programmed backend gives us unlimitted flexibility to make things work
+		
+	
+	
+	
+	
+		 	
