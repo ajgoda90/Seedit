@@ -1,0 +1,2 @@
+Similar Ideas
+	-show similar ideas to a proposed seed and/or branch
