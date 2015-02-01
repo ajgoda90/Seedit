@@ -1,0 +1,4 @@
+User Profiles
+	-user demographic information
+	-used for providing marketing information
+	-reputation record
