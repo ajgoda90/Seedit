@@ -1,6 +1,3 @@
 app.controller("mainController", function($scope) {
-    $scope.message = "";
-    $scope.left  = function() {return 100 - $scope.message.length;};
-    $scope.clear = function() {$scope.message = "";};
-    $scope.save  = function() {alert($scope.message);};
+    $scope.alertEM = function(message){alert(message);};
 });
