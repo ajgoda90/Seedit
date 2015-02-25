@@ -4,8 +4,8 @@
 /**
  * Created by mike on 2/21/15.
  */
-var dummyDAO = angular.module('myApp.dummyDAO',[]);
-serverDAO.factory('api',function(){
+var dummyDAO = angular.module('dummyDAO',[]);
+dummyDAO.factory('api',function(){
     var api = {};
     api.getTrendingTags = function(lowRange, highRange){
         return [
