@@ -11,6 +11,9 @@ TIndex.prototype.home = function(){
     res.send('/');
   });
 };
+
 TIndex.prototype.initRoutes = function() {
   this.home();
 };
+
+module.exports = TIndex;
