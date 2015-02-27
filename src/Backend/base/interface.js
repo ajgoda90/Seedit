@@ -3,7 +3,7 @@ function Interface(){}
 Interface.prototype.validateImplementation = function(interfaceName, interface, implementation) {
   var interfaceMethods = []
   for (var method in interface) {
-    if(method !== "validateImplementation" && method != "validateInterface") {
+    if(method !== "validateImplementation" && method != "inject") {
       interfaceMethods.push(method);
     }
   }
