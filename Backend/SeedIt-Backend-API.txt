@@ -4,8 +4,8 @@ Disclaimer:
 	-This is SUBJECT TO CHANGE until agreed upon between front- and back-end teams.
 	-This API assumes all view related information (excepting listings related to searches, 
 	 trending, etc.) are loaded with with the base url (aka home page).
-	-JSON information will be forthcoming upon further review and consultation with the
-	 front-end team.
+	-JSON and Query information will be forthcoming upon further review and consultation 
+	 with the front-end team.
 	
 
 // INDEX //

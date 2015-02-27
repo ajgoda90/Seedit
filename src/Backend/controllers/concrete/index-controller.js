@@ -11,22 +11,20 @@ function Index(app){
 
 Index.prototype.home = function() {
   this.app.get('/', function(req, res) {
-    res.send('implemented');
+  	var response = {
+  	  url : req.protocol + '://' + req.get('host') + req.originalUrl,
+  	  type : req.method,
+  	  query : req.query,
+  	  params : req.params,
+  	  body : req.body
+  	}
+    res.send(JSON.stringify(response));
   });
 }
-
 
 Index.prototype.initRoutes= function() {
   this.home();
-  this.doSomethingCool();
 };
-
-Index.prototype.doSomethingCool = function() {
-  this.app.post('/postSomethingCool', function(req, res) {
-    res.send(req.body);
-  });
-}
-
 
 module.exports = function(app) {
   if(self === null) {
