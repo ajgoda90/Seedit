@@ -1,0 +1,39 @@
+SeedIt Backend API
+
+Disclaimer:
+	-This is SUBJECT TO CHANGE until agreed upon between front- and back-end teams.
+	-This API assumes all view related information (excepting listings related to searches, 
+	 trending, etc.) are loaded with with the base url (aka home page).
+	-JSON and Query information will be forthcoming upon further review and consultation 
+	 with the front-end team.
+	
+
+// INDEX //
+
+/		:GET	// loads SeedIT -- our home page 
+
+
+// USER //
+
+/users					:POST	// register a user
+/users/<username>		:GET	// gets a user's information & indicates if requested by said user
+/users/<username>		:PUT	// updates a user's information (if requested by said user)
+/users/<username>		:POST	// authenticates username
+/users/<username>/ideas	:GET	// gets all ideas for a given user
+
+
+// IDEA //
+
+/ideas						:GET	// gets a list of ideas
+/ideas						:POST	// creates a new idea
+/ideas/<idea id>			:GET	// gets an idea & indicates if requested by owner of said idea
+/ideas/<idea id>			:PUT	// updates an idea
+/ideas/<idea id>/up-vote	:POST	// 
+
+
+// TAG //
+/tags										:GET 	// gets a list of all tags
+/tags/<tag name>/ideas/<idea id>			:POST	// adds a tag to an idea
+/tags/<tag name>/ideas/<idea id>			:DELETE	// deletes a tag from an idea
+/tags/<tag name>/ideas						:GET	// gets a list of ideas associated with a tag
+

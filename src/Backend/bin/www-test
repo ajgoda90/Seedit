@@ -1,0 +1,6 @@
+#!/usr/bin/env node
+var debug = require('debug')('SeedIt');
+var app = require('../app.js');
+var indexController = require('./tests/index-controller.js')
+
+indexController.test(app);
