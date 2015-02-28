@@ -1,6 +1,6 @@
 var IndexController = require('./controllers/concrete/index-controller.js');
 var UserController = require('./controllers/concrete/user-controller.js');
-/*To Do*/ //var ideaController = require('./controllers/concrete/idea-controller.js');
+var IdeaController = require('./controllers/concrete/idea-controller.js');
 /*To Do*/ //var tagController = require('./controllers/concrete/tag-controller.js');
 
 module.exports.init = function(app, mysqlDAO) {
@@ -10,8 +10,10 @@ module.exports.init = function(app, mysqlDAO) {
 
   var indexController = new IndexController();
   indexController.inject(app);
+
   var userController = new UserController();
   userController.inject(app);
 
-
+  var ideaController = new IdeaController();
+  ideaController.inject(app);
 }
