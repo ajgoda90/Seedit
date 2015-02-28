@@ -1,13 +1,15 @@
-var Interface = require('../../interface.js');
+var Interface = require('../../base/interface.js');
 
 IUser.prototype = new Interface();
 
 function IUser(){}
- 
-IUser.prototype.validateInterface = function() {
-  this.validateImplementation('i-user-controller', IUser.prototype, this);
-}
 
 IUser.prototype.login = function(username, password, callback) {}
+IUser.prototype.inject = function(app){
+	this.validateImplementation('i-user-controller', IUser.prototype, this);
+	this.app = app;
+	this.initRoutes();
+}
 
+IUser.prototype.initRoutes = function(){};
 module.exports = IUser;
