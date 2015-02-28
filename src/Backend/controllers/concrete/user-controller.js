@@ -40,7 +40,8 @@ User.prototype.updateUser = function() {
 }
 
 User.prototype.authUser = function() {
-  this.app.post("/users/login", function(req, res) {
+  this.app.post("/users/:username", function(req, res) {
+  	console.log("see me?");
   	var response = {
   	  url : req.protocol + '://' + req.get('host') + req.originalUrl,
   	  type : req.method,
