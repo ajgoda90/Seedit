@@ -4,7 +4,11 @@ IUser.prototype = new Interface();
 
 function IUser(){}
 
-IUser.prototype.login = function(username, password, callback) {}
+IUser.prototype.getUserIdeas = function(){};
+IUser.prototype.updateUser = function(){};
+IUser.prototype.getUser = function(){};
+IUser.prototype.authUser = function(){};
+IUser.prototype.login = function() {}
 IUser.prototype.inject = function(app){
 	this.validateImplementation('i-user-controller', IUser.prototype, this);
 	this.app = app;
