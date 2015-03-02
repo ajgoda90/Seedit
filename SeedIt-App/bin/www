@@ -1,0 +1,29 @@
+#!/usr/bin/env node
+var debug = require('debug')('SeedIt');
+var app = require('../app.js');
+var router = require('../router.js');
+var MySQL_DAO = require('../base/mysql-dac.js');
+
+
+/*
+var port = process.env.SEED_IT_DB_PORT;
+if(!port) throw "process.env.SEED_IT_DB_PORT not defined";
+else console.log(port);
+var user = process.env.SEED_IT_DB_USER;
+if(!user) throw "process.env.SEED_IT_DB_USER not defined";
+var password = process.env.SEED_IT_DB_PASSWORD;
+if(!password) throw "process.env.SEED_IT_DB_PASSWORD not defined";
+var dbName = process.env.SEED_IT_DB_NAME;
+if(!dbName) throw "process.env.SEED_IT_DB_NAME not defined";
+var connectionLimit = process.env.SEED_IT_DB_CONNECTION_LIMIT;
+if(!connectionLimit) throw "process.env.SEED_IT_DB_CONNECTION_LIMIT not defined";
+*/
+
+var mysqlDAO = new MySQL_DAO('127.0.0.1', 'SeedItUser', 'password', 'SeedIt', 10);
+router.init(app, mysqlDAO);
+
+app.set('port', process.env.PORT || 3000);
+
+var server = app.listen(app.get('port'), function() {
+  debug('Express server listening on port ' + server.address().port);
+});

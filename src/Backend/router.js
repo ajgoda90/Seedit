@@ -1,16 +1,22 @@
 var IndexController = require('./controllers/concrete/index-controller.js');
-/*To Do*/ //var userController = require('./controllers/concrete/user-controller.js');
-/*To Do*/ //var ideaController = require('./controllers/concrete/idea-controller.js');
-/*To Do*/ //var tagController = require('./controllers/concrete/tag-controller.js');
+var UserController = require('./controllers/concrete/user-controller.js');
+var IdeaController = require('./controllers/concrete/idea-controller.js');
+var TagController = require('./controllers/concrete/tag-controller.js');
 
 module.exports.init = function(app, mysqlDAO) {
-  /*To Do*/ //var userModel = new UserModel(mysqlDAO);
-  /*To Do*/ //var ideaModel = new IdeaModel(mysqlDAO);
-  /*To Do*/ //var tagModel = new TagModel(mysqlDAO);
+  /*To Do*/ //var userModel
+  /*To Do*/ //var ideaModel
+  /*To Do*/ //var tagModel
 
-  var indexController = new IndexController(app);
-  indexController.validateInterface();
-  //userController.init(app, userModel);
-  //ideaController.init(app, ideaModel);
-  //tagController.init(app, tagModel);
+  var indexController = new IndexController();
+  indexController.inject(app);
+
+  var userController = new UserController();
+  userController.inject(app);
+  
+  var tagController = new TagController();
+  tagController.inject(app);
+
+  var ideaController = new IdeaController();
+  ideaController.inject(app);
 }

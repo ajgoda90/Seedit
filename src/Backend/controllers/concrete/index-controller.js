@@ -3,10 +3,8 @@ var self = null;
 
 Index.prototype = new IIndex();
 
-function Index(app){
+function Index(){
   IIndex.apply(this, arguments);
-  this.app = app;
-  this.initRoutes();
 }
 
 Index.prototype.home = function() {
