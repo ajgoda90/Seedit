@@ -1,6 +1,9 @@
-app.controller("mainController", function($scope) {
-    //$scope.alertEM = function(message){alert(message);};
-    console.log('It works!');
+app.controller("mainController", function($scope,$state) {
+    ////$scope.alertEM = function(message){alert(message);};
+    //console.log('It works!');
+    $scope.goToState = function (state, params) {
+        $state.go(state, params);
+    }
 });
 
 app.controller('scotchController', function($scope) {

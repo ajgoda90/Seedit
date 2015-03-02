@@ -16,7 +16,7 @@
     <div class="mainWrapper" ng-controller="mainController">
 
         <div id="header" >
-            <div class="logo" ui-sref="home" ng-click="alertEM('Yep, this is the logo')">
+            <div class="logo" ui-sref="main.about" ng-click="alertEM('Yep, this is the logo')">
             SeedIt
             </div>
             <div class="loginSignup">
@@ -24,20 +24,20 @@
             </div>
         </div>
         <div id="search">
-            <div class="newIdea" ui-sref="about">
+            <div class="newIdea" ui-sref="main.home">
                 New Idea
             </div>
             <div class="largeBuffer">
 
             </div>
-            <input class="searchBar" placeholder="Type in me!" ng-model="searchStr">
+            <input class="searchBar" placeholder="Type in me!" ng-model="searchStr" ng-focus="goToState('main.search',{})">
         </div>
 
-        <div  id="views" >
-            <div class="view1">
-                <div ui-view></div>
+        <div  id="views" ui-view>
+            <div class="view1" ui-view="view1">
+
             </div>
-            <div ng-include="'trending.html'" class="view2">
+            <div class="view2" ui-view="view2">
 
             </div>
         </div>
