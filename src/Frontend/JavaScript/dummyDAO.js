@@ -9,9 +9,14 @@ dummyDAO.factory('api',function(){
     var api = {};
     api.getTrendingTags = function(lowRange, highRange){
         return [
-            {"tagName":"dummy1", "frequency":201},
-            {"tagName":"dummy2", "frequency":100},
-            {"tagName":"dummy3","frequency":25}
+            {"tagName":"cooking", "frequency":201, "hyperlink":"www.google.com"},
+            {"tagName":"video games", "frequency":100, "hyperlink":"www.google.com"},
+            {"tagName":"basketball","frequency":25, "hyperlink":"www.google.com"},
+            {"tagName":"baseball","frequency":23, "hyperlink":"www.google.com"},
+            {"tagName":"football","frequency":22, "hyperlink":"www.google.com"},
+            {"tagName":"hockey","frequency":21, "hyperlink":"www.google.com"},
+            {"tagName":"cricket","frequency":20, "hyperlink":"www.google.com"},
+            {"tagName":"swimming","frequency":19, "hyperlink":"www.google.com"}
         ]
     }
     return api;

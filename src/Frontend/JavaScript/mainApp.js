@@ -71,7 +71,7 @@ app.config(function($stateProvider, $urlRouterProvider ) {
 
                     // for column two, we'll define a separate controller
                     view2: {
-                        template: 'Look I am a SEARCHING man!!!!'
+                        templateUrl: 'trending.html'
                     }
                 }
 
