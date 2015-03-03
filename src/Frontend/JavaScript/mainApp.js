@@ -26,7 +26,7 @@ app.config(function($stateProvider, $urlRouterProvider ) {
                     // the child views will be defined here (absolutely named)
                     view1: {
                         templateUrl: 'table-data.html',
-                        controller: 'scotchController'
+                        controller: 'seedController'
                     },
 
                     // for column two, we'll define a separate controller

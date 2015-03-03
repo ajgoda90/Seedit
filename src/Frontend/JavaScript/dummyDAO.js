@@ -19,5 +19,12 @@ dummyDAO.factory('api',function(){
             {"tagName":"swimming","frequency":19, "hyperlink":"www.google.com"}
         ]
     }
+    api.getTopSeeds = function(lowRange, highRange){
+        return [
+            {"seedTitle":"Chocolate Chip Cookies", "seedDescription":"A delicious chocolate chip cookie recipe!", "numberOfBranches":2001},
+            {"seedTitle":"BYU Fake Beard Card", "seedDescription":"Never shave again!", "numberOfBranches":1994},
+            {"seedTitle":"Best Magic deck", "seedDescription":"The best deck in Magic, the Gathering.  Branch only if expert.", "numberOfBranches":229}
+        ]
+    }
     return api;
 });

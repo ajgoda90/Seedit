@@ -12,13 +12,15 @@
         <tr>
             <td>Name</td>
             <td>Cost</td>
+            <td>Number of Branches</td>
         </tr>
         </thead>
         <tbody>
 
-        <tr ng-repeat="scotch in scotches">
-            <td>{{ scotch.name }}</td>
-            <td>${{ scotch.price }}</td>
+        <tr ng-repeat="seed in data">
+            <td>{{seed.seedTitle}}</td>
+            <td>{{ seed.seedDescription }}</td>
+            <td>{{seed.numberOfBranches}}</td>
         </tr>
 
         </tbody>
