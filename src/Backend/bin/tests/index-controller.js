@@ -47,19 +47,6 @@ function test(app) {
           done();
         });
       });
-
-      it('Tests the /ideas endpoint', function(done) {
-        request.get("/ideas")
-        .expect(200)
-        .end(function (error, result) {
-          if(error) {
-            console.log(error);
-          }
-          expect(error).toBeFalsy();
-          done();
-        });
-      });
-
     });
   });
 }

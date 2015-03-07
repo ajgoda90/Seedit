@@ -1,18 +1,11 @@
 var expect = require("expectacle");//require('expect');
 var superTest = require('supertest');
-var IndexController = require('../../controllers/test-implementations/test-index-controller.js');
-var IdeaController = require('../../controllers/test-implementations/test-idea-controller.js');
 var UserController = require('../../controllers/test-implementations/test-user-controller.js')
 
 function test(app) {
-  var indexController = new IndexController();
-  indexController.inject(app);
-  var ideaController = new IdeaController();
-  ideaController.inject(app);
   var userController = new UserController();
   userController.inject(app);
   var request = superTest(app);
-  
   
   describe('test-user-controller', function() {
     describe("Path: '/'", function() {
