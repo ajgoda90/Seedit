@@ -75,6 +75,26 @@ app.config(function($stateProvider, $urlRouterProvider ) {
                     }
                 }
 
+            }).state('main.newIdea', {
+                url: '-newIdea',
+                templateUrl: '../HTML/mainView.html',
+                views: {
+
+                    // the main template will be placed here (relatively named)
+                    '': {templateUrl: 'mainView.html'},
+
+                    // the child views will be defined here (absolutely named)
+                    view1: {
+                        templateUrl: 'newIdea.html',
+                        controller: 'newIdeaCtrl'
+                    },
+
+                    // for column two, we'll define a separate controller
+                    view2: {
+                        templateUrl: '../HTML/trending.html',
+                        controller:'trendingController'
+                    }
+                }
             });
 });
 
