@@ -8,38 +8,24 @@ function test(app) {
   var request = superTest(app);
   
   describe('test-user-controller', function() {
-    describe("Path: '/'", function() {
-  
-      it('returns 200', function(done) {
-        request.get('/')
+    describe("Path: '/users'", function() {
+
+      it('Tests the /users endpoint', function(done) {
+        request.post("/users")
         .expect(200)
         .end(function (error, result) {
           if(error) {
             console.log(error);
           }
-		  expect(error).toBeFalsy();
+          expect(error).toBeFalsy();
           done();
         });
       });
     
-      it('returns the site relative URL', function(done) {
-        request.get('/')
-        //.expect(200)
-        //.expect("Content-Type", "text/html; charset=utf-8")
+      it('Tests the /users/<username> endpoint', function(done) {
+        request.get("/users/sweetBobbyGeorgia")
+        .expect(200)
         .end(function (error, result) {
-          if(error) {
-            console.log(error);
-          }
-		  expect(error).toBeFalsy();
-		  expect(result.text).toBe('/');
-          done();
-        });
-      });
-    
-      it('returns text/html content-type header', function(done) {
-        request.get('/')
-        .expect("Content-type", "text/html; charset=utf-8")
-        .end(function(error, result) {
           if(error) {
             console.log(error);
           }
@@ -48,8 +34,32 @@ function test(app) {
         });
       });
 
-      it('Tests the /ideas endpoint', function(done) {
-        request.get("/ideas")
+      it('Tests the /users/<username> endpoint', function(done) {
+        request.put("/users/sweetBobbyGeorgia")
+        .expect(200)
+        .end(function (error, result) {
+          if(error) {
+            console.log(error);
+          }
+          expect(error).toBeFalsy();
+          done();
+        });
+      });
+
+      it('Tests the /users/<username> endpoint', function(done) {
+        request.post("/users/sweetBobbyGeorgia")
+        .expect(200)
+        .end(function (error, result) {
+          if(error) {
+            console.log(error);
+          }
+          expect(error).toBeFalsy();
+          done();
+        });
+      });
+
+      it('Tests the /users/<username>/ideas endpoint', function(done) {
+        request.get("/users/sweetBobbyGeorgia/ideas")
         .expect(200)
         .end(function (error, result) {
           if(error) {

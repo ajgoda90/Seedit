@@ -9,7 +9,6 @@ function Idea(){
 
 Idea.prototype.getIdeas = function() {
   this.app.get('/ideas', function(req, res) {
-    console.log("getIdeas");
     var response = {
       url : req.protocol + '://' + req.get('host') + req.originalUrl,
       type : req.method,
@@ -23,8 +22,7 @@ Idea.prototype.getIdeas = function() {
 
 Idea.prototype.createIdea = function() {
   this.app.post('/ideas', function(req, res) {
-    console.log("createIdea");
-    var response = {
+      var response = {
       url : req.protocol + '://' + req.get('host') + req.originalUrl,
       type : req.method,
       query : req.query,
@@ -37,7 +35,6 @@ Idea.prototype.createIdea = function() {
 
 Idea.prototype.getIdea = function() {
   this.app.get('/ideas/:ideaID', function(req, res) {
-    console.log("getIdea");
     var response = {
       url : req.protocol + '://' + req.get('host') + req.originalUrl,
       type : req.method,
@@ -51,7 +48,6 @@ Idea.prototype.getIdea = function() {
 
 Idea.prototype.updateIdea = function() {
   this.app.put('/ideas/:ideaID', function(req, res) {
-    console.log("updateIdea");
     var response = {
       url : req.protocol + '://' + req.get('host') + req.originalUrl,
       type : req.method,
@@ -65,7 +61,6 @@ Idea.prototype.updateIdea = function() {
 
 Idea.prototype.upVoteIdea = function() {
   this.app.post('/ideas/:ideaID/up-vote', function(req, res) {
-    console.log("upVoteIdea");
     var response = {
       url : req.protocol + '://' + req.get('host') + req.originalUrl,
       type : req.method,

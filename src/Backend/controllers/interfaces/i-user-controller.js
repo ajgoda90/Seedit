@@ -3,7 +3,7 @@ var Interface = require('../../base/interface.js');
 IUser.prototype = new Interface();
 
 function IUser(){}
-
+IUser.prototype.getUsers = function(){};
 IUser.prototype.getUserIdeas = function(){};
 IUser.prototype.updateUser = function(){};
 IUser.prototype.getUser = function(){};

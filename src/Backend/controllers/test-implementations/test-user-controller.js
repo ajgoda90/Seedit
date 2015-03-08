@@ -7,6 +7,19 @@ function User() {
   IUser.apply(this, arguments);
 }
 
+User.prototype.getUsers = function() {
+  this.app.post("/users", function(req, res) {
+    var response = {
+      url : req.protocol + '://' + req.get('host') + req.originalUrl,
+      type : req.method,
+      query : req.query,
+      params : req.params,
+      body : req.body
+    }
+    res.send(JSON.stringify(response));
+  });
+}
+
 User.prototype.getUser = function() {
   this.app.get("/users/:username", function(req, res) {
   	var response = {
@@ -60,6 +73,7 @@ User.prototype.getUserIdeas = function() {
 }
 
 User.prototype.initRoutes = function(){
+  this.getUsers();
 	this.getUser();
 	this.updateUser();
 	this.authUser();
