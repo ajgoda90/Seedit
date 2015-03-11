@@ -12,7 +12,7 @@ function MySQL_DAO(dbHost, dbUser, dbPassword, dbName, dbConnectionLimit) {
 }
 
 MySQL_DAO.prototype.do = function(sql, params, callback) {
-  pool.getConnection(function(err, connection) {
+  this.pool.getConnection(function(err, connection) {
 	if(err) {
 	  console.error(err)
 	}
@@ -22,13 +22,13 @@ MySQL_DAO.prototype.do = function(sql, params, callback) {
           callback(error, results);
         }
         else {
-          console.error("Error: 'callback' parameter must be a function.");
+          throw new Error("'callback' parameter must be a function.");
         }
         connection.release();
       });
 	} 
 	else {
-	  console.error("Error: 'params' must be an array.");
+	  callback(new Error("'params' must be an array."));
 	}
   });
 };
