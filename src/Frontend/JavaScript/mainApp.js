@@ -85,8 +85,8 @@ app.config(function($stateProvider, $urlRouterProvider ) {
 
                     // the child views will be defined here (absolutely named)
                     view1: {
-                        templateUrl: 'newIdea.html',
-                        controller: 'newIdeaCtrl'
+                        templateUrl: '../HTML/newIdea.html',
+                        controller: 'newIdeaController'
                     },
 
                     // for column two, we'll define a separate controller

@@ -114,6 +114,17 @@ body {
         background-color: #ffffff;
         float: right; }
     body .mainWrapper .newIdeaDiv {
-      margin: 20px; }
+      padding-left: 5%; }
+      body .mainWrapper .newIdeaDiv .newIdeaPreviewImage {
+        max-height: 200px;
+        max-width: 200px; }
+      body .mainWrapper .newIdeaDiv .newIdeaDescription {
+        margin-top: 20px; }
+      body .mainWrapper .newIdeaDiv textarea {
+        resize: none;
+        width: 300px;
+        height: 120px; }
+      body .mainWrapper .newIdeaDiv input {
+        width: 300px; }
 
 /*# sourceMappingURL=style.css.map */

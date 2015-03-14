@@ -151,7 +151,29 @@ body{
     }
 
     .newIdeaDiv {
-      margin: 20px;
+      padding-left: 5%;
+      .newIdeaBody {
+
+      }
+
+      .newIdeaPreviewImage {
+        max-height: 200px;
+        max-width: 200px;
+      }
+
+      .newIdeaDescription {
+        margin-top: 20px;
+      }
+
+      textarea {
+        resize: none;
+        width: 300px;
+        height: 120px;
+      }
+
+      input {
+        width: 300px;
+      }
     }
   }
 
