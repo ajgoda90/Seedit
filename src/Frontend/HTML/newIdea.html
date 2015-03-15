@@ -6,32 +6,33 @@
                     <h3>What is your seed?</h3>
                     <hr>
                 </div>
-                <h4>Idea Title</h4>
-                <input type="text" class="form-control" ng-model="ctrl.title">
+                <div class="col-md-11">
+                    <h4>Idea Title</h4>
+                    <input type="text" class="form-control" ng-model="ctrl.title">
 
-                <h4>Give us a URL for your image</h4>
-                <input type="text" class="form-control" ng-model="ctrl.imageURL">
+                    <h4>Give us a URL for your image</h4>
+                    <input type="text" class="form-control" ng-model="ctrl.imageURL">
 
-                <h4>Tag your idea for better visibility</h4><small>Separate tags with comma's</small>
-                <input type="text" class="form-control" ng-model="ctrl.tag">
+                    <h4>Describe your idea</h4>
+                    <textarea class="form-control" ng-model="ctrl.description"></textarea>
 
-                <h4>Describe your idea</h4>
-                <textarea class="form-control" ng-model="ctrl.description"></textarea><br>
+                    <h4>Hashtag your idea for visibility</h4>
+                    <input type="text" class="form-control" ng-model="ctrl.tags">
 
-                <button class="btn btn-success" ng-click="">Seed It!</button>
+                    <button class="btn btn-success" ng-click="ctrl.submitIdea()">Seed It!</button>
+                </div>
             </div>
             <div class="newIdeaPreview col-md-4">
                 <div class="previewHeader">
                     <h3>A preview of your idea:</h3>
                     <hr>
                 </div>
-                <h4>{{ctrl.title}}</h4>
-                <!--<b>Idea Image:</b><br>-->
-                <img class="newIdeaPreviewImage" fallback-src="../images/seed.jpg" ng-src="{{ctrl.imageURL}}"/>
-                <!--<b>Tags:</b>-->
-                <!--<h5>{{ctrl.tag}}</h5>-->
-                <!--<b>Description:</b>-->
-                <p class="newIdeaDescription">{{ctrl.description}}</p>
+                <div class="newIdeaForm col-md-11">
+                    <h4>{{ctrl.title}}</h4>
+                    <img class="newIdeaPreviewImage" fallback-src="../images/seed.jpg" ng-src="{{ctrl.imageURL}}"/>
+                    <p class="newIdeaDescription">{{ctrl.description}}</p>
+                    <p>{{tags}}</p>
+                </div>
             </div>
         </div>
     </div>

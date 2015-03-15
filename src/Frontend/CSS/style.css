@@ -122,9 +122,11 @@ body {
         margin-top: 20px; }
       body .mainWrapper .newIdeaDiv textarea {
         resize: none;
-        width: 300px;
-        height: 120px; }
+        height: 120px;
+        margin-bottom: 20px; }
       body .mainWrapper .newIdeaDiv input {
-        width: 300px; }
+        margin-bottom: 20px; }
+      body .mainWrapper .newIdeaDiv hr {
+        margin-bottom: 5px; }
 
 /*# sourceMappingURL=style.css.map */
