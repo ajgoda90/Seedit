@@ -20,6 +20,21 @@ Tag.prototype.getTags = function() {
   });
 }
 
+Tag.prototype.addTag = function() {
+  tagController = this;
+  this.app.post("/tags/:tagName", function(req, res) {
+    var tag = { title : req.params.tagName };
+    tagController.tagModel.create(tag, function(err, newTag) {
+      if(!err) {
+        res.end(JSON.stringify(newTag));
+      }
+      else {
+        res.end(err.toString());
+      }
+    });
+  });
+}
+
 Tag.prototype.addTagToIdea = function() {
   this.app.post("/tags/:tagName/ideas/:ideaID", function(req, res) {
     var response = {
@@ -60,10 +75,11 @@ Tag.prototype.getTagIdeas = function() {
 }
 
 Tag.prototype.initRoutes = function(){
-	this.getTags();
+  this.getTags();
   this.addTagToIdea();
   this.deleteTagFromIdea();
   this.getTagIdeas();
+  this.addTag();
 }
 
 module.exports = function(){

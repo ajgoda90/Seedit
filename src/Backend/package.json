@@ -19,6 +19,8 @@
     "expectacle" : "*",
     "mocha" : "*",
     "supertest" : "*",
-    "mysql" : "*"
+    "mysql" : "*",
+    "node-uuid": "*",
+    "async":"*"
   }
 }

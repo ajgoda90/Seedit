@@ -39,7 +39,7 @@ CREATE TABLE Up_Vote (
 );
 
 CREATE TABLE Tag (
-  tag_id CHAR(16) UNIQUE NOT NULL,
+  tag_id CHAR(32) UNIQUE NOT NULL,
   title VARCHAR(32) UNIQUE NOT NULL,
   PRIMARY KEY(tag_id)
 );
