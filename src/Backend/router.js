@@ -17,25 +17,24 @@ module.exports.init = function(app, mysqlDAO) {
   var ideaModel;
   var userModel;
   
-  function bindTagModel(err, tags) {
-    if(!err) {
-      tagModel = tags;
-    }
-    else {
-      throw err;
-    }
-  }
-  
   async.series([
   	function(next){
-    	entity.define("tag", bindTagModel, next);
+      entity.define("tag", function (err, tags) {
+    	if(!err) {
+      	  tagModel = tags;
+      	  next();
+    	}
+    	else {
+      	  throw err;
+    	}
+  	  });
   	}
 	/*,function(next){
     	//define user model
     }*/
   ], function(err){
     if(err) {
-      console.log(err)
+      throw new Error(err.toString());
     }
     else {    
       var indexController = new IndexController();

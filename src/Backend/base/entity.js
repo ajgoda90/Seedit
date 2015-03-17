@@ -22,7 +22,7 @@ Entity = function(mysqlDB) {
  *							   = otherwise, null
  *	throws error if table corresponding to tableName does not have a primary key column  
  */
-Entity.prototype.define = function(tableName, cb, next) {
+Entity.prototype.define = function(tableName, cb) {
   var entity = null;
   if(cruds[tableName]) {
     entity = cruds[tableName];
@@ -36,12 +36,10 @@ Entity.prototype.define = function(tableName, cb, next) {
 	    entity = new Crud(db, tableName, results);
 	    cruds[tableName] = this;
 	    cb(null, entity);
-	    next();
 	  }
 	  else {
 	    var err = new Error("unable to define entity for table '" + tableName + "'\n" + 'Database error message: \n=>' + error);
 	    cb(err, null);
-	    next();
 	    //throw err;
 	  }
 	});
