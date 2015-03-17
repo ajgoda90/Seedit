@@ -19,11 +19,14 @@ function Crud(db, tableName, columns) {
   this.db = db;
   this.tableName = tableName;
   this.columns = {}
+  this.columnKeys = {};
   for(col in columns) {
-	this.columns[columns[col].Field] = columns[col];
-	if(columns[col].Key === 'PRI') {
-	  this.primaryKey = columns[col].Field;
+    var column = columns[col];
+	this.columns[column.Field] = column;
+	if(column.Key === 'PRI') {
+	  this.primaryKey = column.Field;
 	}
+	this.columnKeys[column.Field] = column.Key;
   }
   if(!this.primaryKey) {
     throw new Error("no primary key defined for table '" + tableName + "'.  Entity defined tables must have a primary key.");
@@ -112,6 +115,26 @@ Crud.prototype.get = function(objectID, cb) {
       cb(err, null);
     }
   });
+}
+
+Crud.prototype.getByUniqueColumn = function(uniqueColumn, uniqueEntry, cb) {
+  if(this.columnKeys[uniqueColumn] === 'UNI') {
+    var statement = 'SELECT * FROM ' + this.tableName + ' WHERE ' + uniqueColumn + '=?;';
+    this.db.do(statement, [uniqueEntry], function(error, results) {
+      if(!error) {
+        result = (results.length === 1) ? results[0] : null;
+        cb(null, result);
+      }
+      else {// error
+        var err = new Error("unable to perform get on entity '" + tableName + "'\n" + 'Database error message: \n=>' + error);
+        cb(err, null);
+      }
+    });
+  }
+  else {
+    var err = new Error("unable to perform getByUniqueColumn on entity '" + tableName + " ==> 'uniqueColumn' does not correspond to a unique table column");
+    cb(err, null);
+  }
 }
 
 

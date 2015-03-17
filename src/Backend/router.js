@@ -6,12 +6,14 @@ var UserController = require('./controllers/concrete/user-controller.js');
 var IdeaController = require('./controllers/concrete/idea-controller.js');
 var TagController = require('./controllers/concrete/tag-controller.js');
 
+var UserModel = require('./models/concrete/user-model.js');
+
 module.exports.init = function(app, mysqlDAO) {  
   var entity = new Entity(mysqlDAO);
   
   var tagModel;
   var ideaModel;
-  var userModel;
+  var userModel = new UserModel();
   
   async.series([
   	function(next){
@@ -25,17 +27,17 @@ module.exports.init = function(app, mysqlDAO) {
     	}
   	  });
   	}
-	/*, function(next){
+	, function(next){
     	entity.define("user", function (err, users) {
     	if(!err) {
-      	  userModel = users;
+      	  userModel.inject(users);
       	  next();
     	}
     	else {
       	  throw err;
     	}
   	  });
-    }, function(next){
+    }/*, function(next){
     	entity.define("idea", function (err, ideas) {
     	if(!err) {
       	  ideaModel = ideas;
@@ -55,7 +57,7 @@ module.exports.init = function(app, mysqlDAO) {
   	  indexController.inject(app);
 
       var userController = new UserController();
-      userController.inject(app);
+      userController.inject(app, userModel);
    
       var tagController = new TagController();
       tagController.inject(app, tagModel, ideaModel);

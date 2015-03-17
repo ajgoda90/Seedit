@@ -21,6 +21,7 @@
     "supertest" : "*",
     "mysql" : "*",
     "node-uuid": "*",
-    "async":"*"
+    "async": "*",
+    "bcrypt": "*"
   }
 }
