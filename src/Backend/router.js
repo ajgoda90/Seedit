@@ -6,11 +6,7 @@ var UserController = require('./controllers/concrete/user-controller.js');
 var IdeaController = require('./controllers/concrete/idea-controller.js');
 var TagController = require('./controllers/concrete/tag-controller.js');
 
-module.exports.init = function(app, mysqlDAO) {
-  /*To Do*/ //var userModel
-  /*To Do*/ //var ideaModel
-  /*To Do*/ //var tagModel
-  
+module.exports.init = function(app, mysqlDAO) {  
   var entity = new Entity(mysqlDAO);
   
   var tagModel;
@@ -29,8 +25,26 @@ module.exports.init = function(app, mysqlDAO) {
     	}
   	  });
   	}
-	/*,function(next){
-    	//define user model
+	/*, function(next){
+    	entity.define("user", function (err, users) {
+    	if(!err) {
+      	  userModel = users;
+      	  next();
+    	}
+    	else {
+      	  throw err;
+    	}
+  	  });
+    }, function(next){
+    	entity.define("idea", function (err, ideas) {
+    	if(!err) {
+      	  ideaModel = ideas;
+      	  next();
+    	}
+    	else {
+      	  throw err;
+    	}
+  	  });
     }*/
   ], function(err){
     if(err) {
