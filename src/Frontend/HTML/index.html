@@ -9,6 +9,7 @@
     <script src="../JavaScript/mainController.js"></script>
     <script src="../JavaScript/trendingController.js"></script>
     <script src="../JavaScript/newIdeaController.js"></script>
+    <script src="../JavaScript/loginSignupController.js"></script>
     <script src="../JavaScript/dummyDAO.js"></script>
     <script src="../JavaScript/angular-ui-router.min.js"></script>
     <link rel="stylesheet" type="text/css"  href="../CSS/style.css">
@@ -17,10 +18,10 @@
     <div class="mainWrapper" ng-controller="mainController">
 
         <div id="header" >
-            <div class="logo" ui-sref="main.about" ng-click="alertEM('Yep, this is the logo')">
+            <div class="logo" ui-sref="main.home" ng-click="alertEM('Yep, this is the logo')">
             SeedIt
             </div>
-            <div class="loginSignup">
+            <div class="loginSignup" ui-sref="main.loginSignup">
                 Login/Sign-up
             </div>
         </div>

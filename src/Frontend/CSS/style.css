@@ -1,5 +1,6 @@
 body {
-  background-color: #ecffdf; }
+  background-color: #B9FFAE;
+  overflow: hidden; }
   body .mainWrapper {
     width: 80%;
     margin-left: auto;
@@ -7,7 +8,7 @@ body {
     body .mainWrapper #header {
       width: 100%;
       height: 100px;
-      background-color: #4649ff;
+      background-color: #CC5B1C;
       border-top-left-radius: 5px;
       border-top-right-radius: 5px; }
       body .mainWrapper #header .logo {
@@ -55,7 +56,7 @@ body {
         height: 70px;
         display: inline-block;
         vertical-align: middle;
-        background-color: #3da4ff;
+        background-color: #CC5B1C;
         right: 15px;
         text-align: center;
         line-height: 70px;
@@ -106,7 +107,11 @@ body {
         display: inline-block;
         height: 550px;
         background-color: #ffffff;
-        float: left; }
+        float: left;
+        overflow: scroll;
+        overflow-x: hidden; }
+        body .mainWrapper #views .view1 table td {
+          padding-left: 20px; }
       body .mainWrapper #views .view2 {
         width: 22%;
         display: inline-block;
