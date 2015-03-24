@@ -7,7 +7,7 @@ function User() {
   IUser.apply(this, arguments);
 }
 
-User.prototype.getUsers = function() {
+User.prototype.addUser = function() {
   this.app.post("/users", function(req, res) {
     var response = {
       url : req.protocol + '://' + req.get('host') + req.originalUrl,
@@ -73,7 +73,7 @@ User.prototype.getUserIdeas = function() {
 }
 
 User.prototype.initRoutes = function(){
-  this.getUsers();
+  this.addUser();
 	this.getUser();
 	this.updateUser();
 	this.authUser();

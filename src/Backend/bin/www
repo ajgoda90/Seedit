@@ -6,7 +6,7 @@ var MySQL_DAO = require('../base/mysql-dac.js');
 
 
 var port = process.env.SEED_IT_DB_PORT;
-//if(!port) throw "process.env.SEED_IT_DB_PORT not defined";
+if(!port) throw "process.env.SEED_IT_DB_PORT not defined";
 var user = process.env.SEED_IT_DB_USER;
 if(!user) throw "process.env.SEED_IT_DB_USER not defined";
 var password = process.env.SEED_IT_DB_PASSWORD;
