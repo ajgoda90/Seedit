@@ -1,7 +1,63 @@
 $glow: rgba(255, 255, 255, 0.67);
 
 body{
-  background-color: #ecffdf;
+  background-color: #B9FFAE;
+  overflow: hidden;
+
+
+  .tags {
+    list-style: none;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+  }
+
+  .tag {
+    background: #eee;
+    border-radius: 3px 0 0 3px;
+    color: #999;
+    display: inline-block;
+    height: 26px;
+    line-height: 26px;
+    padding: 0 20px 0 23px;
+    position: relative;
+    margin: 0 10px 10px 0;
+    text-decoration: none;
+    -webkit-transition: color 0.2s;
+  }
+
+  .tag::before {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: inset 0 1px rgba(0, 0, 0, 0.25);
+    content: '';
+    height: 6px;
+    left: 10px;
+    position: absolute;
+    width: 6px;
+    top: 10px;
+  }
+
+  .tag::after {
+    background: #fff;
+    border-bottom: 13px solid transparent;
+    border-left: 10px solid #eee;
+    border-top: 13px solid transparent;
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .tag:hover {
+    background-color: crimson;
+    color: white;
+  }
+
+  .tag:hover::after {
+    border-left-color: crimson;
+  }
+
 
   .mainWrapper{
     width: 80%;
@@ -11,7 +67,7 @@ body{
     #header{
       width:100%;
       height: 100px;
-      background-color: #4649ff;
+      background-color: #CC5B1C;
       border-top-left-radius: 5px;
       border-top-right-radius: 5px;
 
@@ -71,7 +127,7 @@ body{
         height:70px;
         display: inline-block;
         vertical-align: middle;
-        background-color: #3da4ff;
+        background-color: #CC5B1C;
         right:15px;
         text-align: center;
         line-height: 70px;
@@ -139,6 +195,12 @@ body{
         background-color: #ffffff;
 //        border: dashed 1px black;
         float: left;
+        overflow: scroll;
+        overflow-x: hidden;
+        table td {
+          padding-left: 20px;
+        }
+
       }
       .view2{
         width: 22%;
@@ -147,6 +209,37 @@ body{
         background-color: #ffffff;
 //        border: dashed 1px black;
         float: right;
+      }
+    }
+
+    .newIdeaDiv {
+      padding-left: 5%;
+      .newIdeaBody {
+
+      }
+
+      .newIdeaPreviewImage {
+        max-height: 200px;
+        max-width: 200px;
+      }
+
+      .newIdeaDescription {
+        margin-top: 20px;
+      }
+
+      textarea {
+        resize: none;
+        height: 120px;
+//        padding-bottom: 0px;
+        margin-bottom: 20px;
+      }
+
+      input {
+        margin-bottom: 20px;
+      }
+
+      hr {
+        margin-bottom: 5px;
       }
     }
   }

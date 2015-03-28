@@ -7,8 +7,7 @@ function test(app) {
   indexController.inject(app);
   var request = superTest(app);
   
-  
-  describe('index controller', function() {
+  describe('test-index-controller', function() {
     describe("Path: '/'", function() {
   
       it('returns 200', function(done) {

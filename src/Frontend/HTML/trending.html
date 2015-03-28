@@ -2,7 +2,7 @@
         <div class="trendingHeader">
             <h5>Trending Tags:</h5>
         </div>
-        <div class="tags" ng-repeat="row in ctrl.data">
-            <a href="{{row.hyperlink}}">{{row.tagName}}</a>
-        </div>
+        <ul class="tags">
+            <li ng-repeat="row in ctrl.data"><a href="#" class="tag">{{row.tagName}}</a></li>
+        </ul>
 </div>

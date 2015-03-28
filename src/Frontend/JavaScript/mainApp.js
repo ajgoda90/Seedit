@@ -75,6 +75,46 @@ app.config(function($stateProvider, $urlRouterProvider ) {
                     }
                 }
 
+            }).state('main.newIdea', {
+                url: '-newIdea',
+                templateUrl: '../HTML/mainView.html',
+                views: {
+
+                    // the main template will be placed here (relatively named)
+                    '': {templateUrl: 'mainView.html'},
+
+                    // the child views will be defined here (absolutely named)
+                    view1: {
+                        templateUrl: '../HTML/newIdea.html',
+                        controller: 'newIdeaController'
+                    },
+
+                    // for column two, we'll define a separate controller
+                    view2: {
+                        templateUrl: '../HTML/trending.html',
+                        controller:'trendingController'
+                    }
+                }
+            }).state('main.loginSignup', {
+            url: '-login-signup',
+            templateUrl: '../HTML/mainView.html',
+                views: {
+
+                    // the main template will be placed here (relatively named)
+                    '': {templateUrl: 'mainView.html'},
+
+                    // the child views will be defined here (absolutely named)
+                    view1: {
+                        templateUrl: '../HTML/login-signup.html',
+                        controller: 'loginSignupController'
+                    },
+
+                    // for column two, we'll define a separate controller
+                    view2: {
+                        templateUrl: '../HTML/trending.html',
+                        controller:'trendingController'
+                    }
+                }
             });
 });
 

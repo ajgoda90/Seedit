@@ -1,0 +1,39 @@
+<div class="newIdeaDiv" ng-controller="loginSignupController as ctrl">
+    <div class="container">
+        <div class="row">
+            <div class="newIdeaBody col-md-4">
+                <div class="newIdeaHeader">
+                    <h3>Sign Up</h3>
+                    <hr>
+                </div>
+                <div class="col-md-11">
+                    <h4>Email</h4>
+                    <input type="text" class="form-control" ng-model="ctrl.title">
+
+                    <h4>Password</h4>
+                    <input type="text" class="form-control" ng-model="ctrl.imageURL">
+
+                    <h4>Double Check Password</h4>
+                    <input type="text" class="form-control" ng-model="ctrl.imageURL">
+
+                    <button class="btn btn-success" ng-click="ctrl.submitIdea()">Sign Up</button>
+                </div>
+            </div>
+            <div class="newIdeaPreview col-md-4">
+                <div class="newIdeaHeader">
+                    <h3>Log In</h3>
+                    <hr>
+                </div>
+                <div class="col-md-11">
+                    <h4>Email</h4>
+                    <input type="text" class="form-control" ng-model="ctrl.title">
+
+                    <h4>Password</h4>
+                    <input type="text" class="form-control" ng-model="ctrl.imageURL">
+
+                    <button class="btn btn-success" ng-click="ctrl.submitIdea()">Log In</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
