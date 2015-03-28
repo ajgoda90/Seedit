@@ -1,7 +1,7 @@
 /**
  * Created by Andrew on 2/21/2015.
  */
-var app = angular.module("mainApp", ['dummyDAO','ui.router']);
+var app = angular.module("mainApp", ['dummyDAO','ui.router','angular.filter']);
 
 app.config(function($stateProvider, $urlRouterProvider ) {
 
@@ -66,7 +66,8 @@ app.config(function($stateProvider, $urlRouterProvider ) {
 
                     // the child views will be defined here (absolutely named)
                     view1: {
-                        templateUrl: '../HTML/search.html'
+                        templateUrl: '../HTML/grid.html',
+                        controller: 'gridController'
                     },
 
                     // for column two, we'll define a separate controller

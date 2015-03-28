@@ -1,19 +1,22 @@
 $glow: rgba(255, 255, 255, 0.67);
-
+$textDark: rgb(72, 72, 72);
+$backgroundLight: #eee;
+$AccentColor: #CC5B1C;
+$LogoColor:#50cf31;
+html{background-color: #b9ffad;}
 body{
-  background-color: #B9FFAE;
+  background-color: #b9ffad !important;
   overflow: hidden;
-
-
+  color:$textDark;
   .tags {
     list-style: none;
     margin: 0;
     overflow: hidden;
-    padding: 0px;
+    padding: 1px;
   }
 
   .tag {
-    background: #eee;
+    background: $backgroundLight;
     border-radius: 3px 0 0 3px;
     color: #999;
     display: inline-block;
@@ -41,7 +44,7 @@ body{
   .tag::after {
     background: #fff;
     border-bottom: 13px solid transparent;
-    border-left: 10px solid #eee;
+    border-left: 10px solid $backgroundLight;
     border-top: 13px solid transparent;
     content: '';
     position: absolute;
@@ -50,12 +53,12 @@ body{
   }
 
   .tag:hover {
-    background-color: crimson;
+    background-color: $AccentColor;
     color: white;
   }
 
   .tag:hover::after {
-    border-left-color: crimson;
+    border-left-color: $AccentColor;
   }
 
 
@@ -67,7 +70,7 @@ body{
     #header{
       width:100%;
       height: 100px;
-      background-color: #CC5B1C;
+      background-color: $AccentColor;
       border-top-left-radius: 5px;
       border-top-right-radius: 5px;
 
@@ -77,7 +80,7 @@ body{
         border-top-left-radius: 5px;
         max-width: 200px;
         min-height: 100px;
-        background-color: #50cf31;
+        background-color: $LogoColor;
         font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, FreeSerif, serif;
         font-size: 2em;
         color:white;
@@ -127,7 +130,7 @@ body{
         height:70px;
         display: inline-block;
         vertical-align: middle;
-        background-color: #CC5B1C;
+        background-color: $AccentColor;
         right:15px;
         text-align: center;
         line-height: 70px;
@@ -240,6 +243,57 @@ body{
 
       hr {
         margin-bottom: 5px;
+      }
+    }
+  }
+
+//  __________________________________  GRID LAYOUT STUFF
+  .gridWrapper{
+    padding:3% 3% 0% 2.5%;
+
+    .gridElement{
+      padding:0px 0px 0px 0px!important;
+      .gridElementWrapper{
+        background-color: $backgroundLight;
+        border-radius: 10px;
+        height:300px;
+        margin-left:10%;
+        margin-bottom: 10%;
+
+        .gridElementTitle{
+          padding-left:10px;
+          color: #616161;
+          font-size: 1em;
+          height:18%;
+          background-color:$LogoColor;
+          border-radius: 10px 10px 0px 0px;
+        }
+        .gridElementImage{
+          max-width:100%;
+          height:70%;
+          position: relative;
+          img{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            height:210px;
+            width:210px;
+            margin-right: -50%;
+            transform: translate(-50%, -50%);
+            display: block;
+          }
+        }
+        .gridElementCount{
+          color:$textDark;
+          font-size: 1em;
+          height:12%;
+          padding-left: 10px;
+        }
+      }
+      .gridElementWrapper:hover{
+        -webkit-box-shadow: 0px 0px 30px 0px $LogoColor;
+        -moz-box-shadow:    0px 0px 30px 0px $LogoColor;
+        box-shadow:         0px 0px 30px 0px $LogoColor;
       }
     }
   }
