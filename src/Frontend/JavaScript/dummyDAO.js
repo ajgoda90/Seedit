@@ -8,14 +8,14 @@ var dummyDAO = angular.module('dummyDAO',[]);
 dummyDAO.factory('api',function(){
 
     var tags =  [
-        {"tagName":"cooking", "frequency":201, "hyperlink":"www.google.com"},
-        {"tagName":"video games", "frequency":100, "hyperlink":"www.google.com"},
-        {"tagName":"basketball","frequency":25, "hyperlink":"www.google.com"},
-        {"tagName":"baseball","frequency":23, "hyperlink":"www.google.com"},
-        {"tagName":"football","frequency":22, "hyperlink":"www.google.com"},
-        {"tagName":"hockey","frequency":21, "hyperlink":"www.google.com"},
-        {"tagName":"cricket","frequency":20, "hyperlink":"www.google.com"},
-        {"tagName":"swimming","frequency":19, "hyperlink":"www.google.com"}
+        {"tagid":5,"tagName":"cooking", "ranking":1},
+        {"tagid":2,"tagName":"video games", "ranking":2},
+        {"tagid":7,"tagName":"basketball","ranking":3},
+        {"tagid":33,"tagName":"baseball","ranking":4},
+        {"tagid":87,"tagName":"football","ranking":5},
+        {"tagid":124,"tagName":"hockey","ranking":6},
+        {"tagid":5435,"tagName":"cricket","ranking":7},
+        {"tagid":444,"tagName":"swimming","ranking":8}
     ];
 
     var seeds = [
