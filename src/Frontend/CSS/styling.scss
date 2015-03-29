@@ -1,13 +1,21 @@
 $glow: rgba(255, 255, 255, 0.67);
 $textDark: rgb(72, 72, 72);
 $backgroundLight: #eee;
-$AccentColor: #CC5B1C;
+$AccentColor: #251f81;//#CC5B1C;
+$HeaderColor:#71f15c;
 $LogoColor:#50cf31;
-html{background-color: #b9ffad;}
+$IndexBackground:#b9ffad;
+$BranchColor: rgba(37, 31, 129, 0.05);
+$BranchGlow: rgba(98, 255, 61, 0.65);
 body{
-  background-color: #b9ffad !important;
+  background-color: $IndexBackground !important;
   overflow: hidden;
   color:$textDark;
+  position: fixed;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
   .tags {
     list-style: none;
     margin: 0;
@@ -64,13 +72,14 @@ body{
 
   .mainWrapper{
     width: 80%;
+    height: 100%;
     margin-left: auto;
     margin-right: auto;
 
     #header{
       width:100%;
       height: 100px;
-      background-color: $AccentColor;
+      background-color: $HeaderColor;
       border-top-left-radius: 5px;
       border-top-right-radius: 5px;
 
@@ -90,6 +99,7 @@ body{
 
       }
       .logo:hover{
+        cursor: pointer;
         -webkit-box-shadow: 0px 0px 30px 0px $glow;
         -moz-box-shadow:    0px 0px 30px 0px $glow;
         box-shadow:         0px 0px 30px 0px $glow;
@@ -98,7 +108,7 @@ body{
         width: 200px;
         max-width: 200px;
         min-height: 100px;
-        float: right;
+        float:right;
         border-top-right-radius: 5px;
         display:inline-block;
 //        background-color: #50cf31;
@@ -111,7 +121,7 @@ body{
 
       }
       .loginSignup:hover{
-
+        cursor: pointer;
         -webkit-stroke-width: 5.3px;
         -webkit-stroke-color: #FFFFFF;
         -webkit-fill-color: #FFFFFF;
@@ -122,7 +132,7 @@ body{
     #search{
       width:100%;
       height: 100px;
-      background-color: #71f15c;
+      background-color: $HeaderColor;
 
       .newIdea{
         width:100px;
@@ -138,6 +148,7 @@ body{
 
       }
       .newIdea:hover{
+        cursor: pointer;
         -webkit-box-shadow: 0px 0px 30px 0px $glow;
         -moz-box-shadow:    0px 0px 30px 0px $glow;
         box-shadow:         0px 0px 30px 0px $glow;
@@ -149,14 +160,16 @@ body{
       }
 
       .searchBar{
-        width:35%;
+        width:20%;
         min-width: 100px;
         height:30px;
         vertical-align: middle;
         display: inline-block;
         background-color: #ffffff;
         border-radius: 5px;
-        left:30%;
+        float:right;
+        margin-right: 4%;
+        margin-top: 35px;
         line-height: 30px;
       }
       .searchBar::-webkit-input-placeholder {
@@ -190,11 +203,11 @@ body{
 
     #views{
       width:100%;
-      height:700px;
+      height:75%;
       .view1{
         width: 77%;
         display: inline-block;
-        height: 550px;
+        height: 90%;
         background-color: #ffffff;
 //        border: dashed 1px black;
         float: left;
@@ -207,8 +220,8 @@ body{
       }
       .view2{
         width: 22%;
+        height:90%;
         display:inline-block;
-        height: 550px;
         background-color: #ffffff;
 //        border: dashed 1px black;
         float: right;
@@ -262,10 +275,10 @@ body{
 
         .gridElementTitle{
           padding-left:10px;
-          color: #616161;
-          font-size: 1em;
+          color: $textDark;
+          font-size: 1.125em;
           height:18%;
-          background-color:$LogoColor;
+          background-color: $BranchColor;
           border-radius: 10px 10px 0px 0px;
         }
         .gridElementImage{
@@ -276,24 +289,28 @@ body{
             position: absolute;
             top: 50%;
             left: 50%;
-            height:210px;
-            width:210px;
+            height:300px;
+            width:300px;
+            max-height:99%;
+            max-width:99%;
             margin-right: -50%;
             transform: translate(-50%, -50%);
             display: block;
           }
         }
         .gridElementCount{
-          color:$textDark;
+          color: $textDark;
           font-size: 1em;
           height:12%;
           padding-left: 10px;
+          padding-top:10px;
         }
       }
       .gridElementWrapper:hover{
-        -webkit-box-shadow: 0px 0px 30px 0px $LogoColor;
-        -moz-box-shadow:    0px 0px 30px 0px $LogoColor;
-        box-shadow:         0px 0px 30px 0px $LogoColor;
+        cursor: pointer;
+        -webkit-box-shadow: 0px 0px 30px 0px $BranchGlow;
+        -moz-box-shadow:    0px 0px 30px 0px $BranchGlow;
+        box-shadow:         0px 0px 30px 0px $BranchGlow;
       }
     }
   }

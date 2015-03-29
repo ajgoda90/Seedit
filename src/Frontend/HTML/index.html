@@ -17,8 +17,9 @@
     <script src="../JavaScript/dummyDAO.js"></script>
     <script src="../JavaScript/gridController.js"></script>
 
-
+    <!--<link rel="stylesheet" href="../Resources/font-awesome.min.css">-->
     <link rel="stylesheet" type="text/css"  href="../CSS/style.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../Resources/bootstrap.min.css">
 </head>
 <body ng-app="mainApp">
@@ -39,7 +40,7 @@
             <div class="largeBuffer">
 
             </div>
-            <input class="searchBar" placeholder="Type in me!" ng-model="searchStr" ng-focus="goToState('main.search',{})">
+            <input class="searchBar" placeholder="Search..." ng-model="searchStr" ng-focus="goToState('main.search',{})">
         </div>
 
         <div  id="views" ui-view>
