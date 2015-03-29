@@ -1,10 +1,12 @@
-html {
-  background-color: #b9ffad; }
-
 body {
   background-color: #b9ffad !important;
   overflow: hidden;
-  color: #484848; }
+  color: #484848;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; }
   body .tags {
     list-style: none;
     margin: 0;
@@ -42,18 +44,19 @@ body {
     right: 0;
     top: 0; }
   body .tag:hover {
-    background-color: #CC5B1C;
+    background-color: #251f81;
     color: white; }
   body .tag:hover::after {
-    border-left-color: #CC5B1C; }
+    border-left-color: #251f81; }
   body .mainWrapper {
     width: 80%;
+    height: 100%;
     margin-left: auto;
     margin-right: auto; }
     body .mainWrapper #header {
       width: 100%;
       height: 100px;
-      background-color: #CC5B1C;
+      background-color: #71f15c;
       border-top-left-radius: 5px;
       border-top-right-radius: 5px; }
       body .mainWrapper #header .logo {
@@ -70,6 +73,7 @@ body {
         vertical-align: middle;
         line-height: 100px; }
       body .mainWrapper #header .logo:hover {
+        cursor: pointer;
         -webkit-box-shadow: 0px 0px 30px 0px rgba(255, 255, 255, 0.67);
         -moz-box-shadow: 0px 0px 30px 0px rgba(255, 255, 255, 0.67);
         box-shadow: 0px 0px 30px 0px rgba(255, 255, 255, 0.67); }
@@ -87,6 +91,7 @@ body {
         vertical-align: middle;
         line-height: 100px; }
       body .mainWrapper #header .loginSignup:hover {
+        cursor: pointer;
         -webkit-stroke-width: 5.3px;
         -webkit-stroke-color: #FFFFFF;
         -webkit-fill-color: #FFFFFF;
@@ -101,12 +106,13 @@ body {
         height: 70px;
         display: inline-block;
         vertical-align: middle;
-        background-color: #CC5B1C;
+        background-color: #251f81;
         right: 15px;
         text-align: center;
         line-height: 70px;
         color: #ffffff; }
       body .mainWrapper #search .newIdea:hover {
+        cursor: pointer;
         -webkit-box-shadow: 0px 0px 30px 0px rgba(255, 255, 255, 0.67);
         -moz-box-shadow: 0px 0px 30px 0px rgba(255, 255, 255, 0.67);
         box-shadow: 0px 0px 30px 0px rgba(255, 255, 255, 0.67); }
@@ -114,14 +120,16 @@ body {
         width: 50%;
         display: inline-block; }
       body .mainWrapper #search .searchBar {
-        width: 35%;
+        width: 20%;
         min-width: 100px;
         height: 30px;
         vertical-align: middle;
         display: inline-block;
         background-color: #ffffff;
         border-radius: 5px;
-        left: 30%;
+        float: right;
+        margin-right: 4%;
+        margin-top: 35px;
         line-height: 30px; }
       body .mainWrapper #search .searchBar::-webkit-input-placeholder {
         color: dimgrey;
@@ -146,11 +154,11 @@ body {
       /* Adjusts for spacing */ }
     body .mainWrapper #views {
       width: 100%;
-      height: 700px; }
+      height: 75%; }
       body .mainWrapper #views .view1 {
         width: 77%;
         display: inline-block;
-        height: 550px;
+        height: 90%;
         background-color: #ffffff;
         float: left;
         overflow: scroll;
@@ -159,8 +167,8 @@ body {
           padding-left: 20px; }
       body .mainWrapper #views .view2 {
         width: 22%;
+        height: 90%;
         display: inline-block;
-        height: 550px;
         background-color: #ffffff;
         float: right; }
     body .mainWrapper .newIdeaDiv {
@@ -190,10 +198,10 @@ body {
         margin-bottom: 10%; }
         body .gridWrapper .gridElement .gridElementWrapper .gridElementTitle {
           padding-left: 10px;
-          color: #616161;
-          font-size: 1em;
+          color: #484848;
+          font-size: 1.125em;
           height: 18%;
-          background-color: #50cf31;
+          background-color: rgba(37, 31, 129, 0.05);
           border-radius: 10px 10px 0px 0px; }
         body .gridWrapper .gridElement .gridElementWrapper .gridElementImage {
           max-width: 100%;
@@ -203,8 +211,10 @@ body {
             position: absolute;
             top: 50%;
             left: 50%;
-            height: 210px;
-            width: 210px;
+            height: 300px;
+            width: 300px;
+            max-height: 99%;
+            max-width: 99%;
             margin-right: -50%;
             transform: translate(-50%, -50%);
             display: block; }
@@ -212,10 +222,12 @@ body {
           color: #484848;
           font-size: 1em;
           height: 12%;
-          padding-left: 10px; }
+          padding-left: 10px;
+          padding-top: 10px; }
       body .gridWrapper .gridElement .gridElementWrapper:hover {
-        -webkit-box-shadow: 0px 0px 30px 0px #50cf31;
-        -moz-box-shadow: 0px 0px 30px 0px #50cf31;
-        box-shadow: 0px 0px 30px 0px #50cf31; }
+        cursor: pointer;
+        -webkit-box-shadow: 0px 0px 30px 0px rgba(98, 255, 61, 0.65);
+        -moz-box-shadow: 0px 0px 30px 0px rgba(98, 255, 61, 0.65);
+        box-shadow: 0px 0px 30px 0px rgba(98, 255, 61, 0.65); }
 
 /*# sourceMappingURL=style.css.map */
