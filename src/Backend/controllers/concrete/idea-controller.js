@@ -8,54 +8,61 @@ function Idea(){
 }
 
 Idea.prototype.getIdeas = function() {
+  var ideaModel = this.ideaModel;
   this.app.get('/ideas', function(req, res) {
-    var response = {
-      url : req.protocol + '://' + req.get('host') + req.originalUrl,
-      type : req.method,
-      query : req.query,
-      params : req.params,
-      body : req.body
-    }
-    res.send(JSON.stringify(response));
+    ideaModel.getIdeas(function(err, ideaList){
+      if(!err) {
+        res.end(JSON.stringify(ideaList));
+      }
+      else {
+        res.end(err.toString());
+      }
+    });
   });
 }
 
 Idea.prototype.createIdea = function() {
+  var ideaModel = this.ideaModel;
   this.app.post('/ideas', function(req, res) {
-    var response = {
-      url : req.protocol + '://' + req.get('host') + req.originalUrl,
-      type : req.method,
-      query : req.query,
-      params : req.params,
-      body : req.body
-    }
-    res.send(JSON.stringify(response));
+    var timeStamp = new Date().toISOString().slice(0, 19).replace('T', ' ');
+    ideaModel.createIdea(req.body.title, req.body.blurb, req.body.description, req.body.author_user_id, timeStamp, req.body.parent_idea_id, function(err, newIdea){
+      if(!err) {
+        res.end(JSON.stringify(newIdea));
+      }
+      else {
+        res.end(err.toString());
+      }
+    });
   });
 }
 
 Idea.prototype.getIdea = function() {
+  var ideaModel = this.ideaModel;
   this.app.get('/ideas/:ideaID', function(req, res) {
-    var response = {
-      url : req.protocol + '://' + req.get('host') + req.originalUrl,
-      type : req.method,
-      query : req.query,
-      params : req.params,
-      body : req.body
-    }
-    res.send(JSON.stringify(response));
+    var idea_id = req.param("ideaID");
+    ideaModel.getIdea(idea_id, function(err, idea){
+      if (!err){
+        res.end(JSON.stringify(idea));
+      }
+      else {
+        res.end(err.toString());
+      }
+    });
   });
 }
 
 Idea.prototype.updateIdea = function() {
+  var ideaModel = this.ideaModel;
   this.app.put('/ideas/:ideaID', function(req, res) {
-    var response = {
-      url : req.protocol + '://' + req.get('host') + req.originalUrl,
-      type : req.method,
-      query : req.query,
-      params : req.params,
-      body : req.body
-    }
-    res.send(JSON.stringify(response));
+    var idea_id = req.param("ideaID");
+    ideaModel.updateIdea(req.body, function(err, idea){
+      if (!err){
+        res.end(JSON.stringify(idea));
+      }
+      else {
+        res.end(err.toString());
+      }
+    });
   });
 }
 

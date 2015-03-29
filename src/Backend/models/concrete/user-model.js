@@ -1,6 +1,5 @@
 var IUserModel = require('../interfaces/i-user-model.js');
 var bcrypt = require('bcrypt');
-
 var hashFactor = 15;
 var self = null;
 
