@@ -1,6 +1,6 @@
 <div class="gridWrapper">
     <div class=row ng-repeat="seeds in data | groupBy:3">
-        <div class="col-xs-4 gridElement" ng-repeat="seed in seeds" >
+        <div class="col-xs-12 col-md-4 gridElement" ng-repeat="seed in seeds" >
             <div class="gridElementWrapper">
                 <div class="gridElementTitle"><b>{{seed.seedTitle}}</b></div>
                 <div class="gridElementImage"><img ng-src="{{seed.seedImageURL}}"/></div>
