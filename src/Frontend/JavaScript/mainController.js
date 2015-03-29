@@ -12,4 +12,20 @@ app.controller('seedController', ['$scope', 'api', function($scope, api) {
 
     $scope.data = api.getTopSeeds(0,0);
 
+    $scope.rows = [];
+    var row = [];
+    for (var i = 0; i < $scope.data.length; i++) {
+        row.push($scope.data[i]);
+
+        if ((i+1)%2 == 0) {
+            console.log(row);
+            $scope.rows.push(row);
+            row = [];
+        }
+    }
+
+    $scope.viewSeed = function() {
+        console.log("hello there partner");
+    }
+
 }]);

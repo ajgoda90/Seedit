@@ -10,7 +10,7 @@
     <table class="table table-hover">
         <tbody>
 
-        <tr ng-repeat="seed in data">
+        <tr ng-repeat="seed in data" ui-sref="main.seedview">
             <td>
                 <div class="row"><b>{{seed.seedTitle}}</b></div>
                 <div class="row"><img ng-src="{{seed.seedImageURL}}"/></div>
