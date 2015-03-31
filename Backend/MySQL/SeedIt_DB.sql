@@ -7,7 +7,7 @@ CREATE TABLE User (
   user_id CHAR(32) UNIQUE NOT NULL,
   first_name VARCHAR(32) NOT NULL,
   last_name VARCHAR(32) NOT NULL,
-  email VARCHAR(256) UNIQUE NOT NULL,
+  email VARCHAR(255) UNIQUE NOT NULL,
   username VARCHAR(16) UNIQUE NOT NULL,
   pass CHAR(60) NOT NULL,
   PRIMARY KEY(user_id)
@@ -16,10 +16,10 @@ CREATE TABLE User (
 CREATE TABLE Idea (
   idea_id CHAR(32) UNIQUE NOT NULL,
   title VARCHAR(32) NOT NULL,
-  blurb VARCHAR(256) NOT NULL,
+  blurb VARCHAR(255) NOT NULL,
   description TEXT NOT NULL,
   author_user_id CHAR(32) NOT NULL,
-  time_created DATETIME NOT NULL,
+  last_modified DATETIME NOT NULL,
   parent_idea_id CHAR(32) NULL,
   PRIMARY KEY(idea_id),
   FOREIGN KEY(author_user_id) REFERENCES User(user_id), 
