@@ -18,7 +18,7 @@ CREATE TABLE Idea (
   title VARCHAR(32) NOT NULL,
   blurb VARCHAR(256) NOT NULL,
   description TEXT NOT NULL,
-  author_user_id CHAR(32) UNIQUE NOT NULL,
+  author_user_id CHAR(32) NOT NULL,
   time_created DATETIME NOT NULL,
   parent_idea_id CHAR(32) NULL,
   PRIMARY KEY(idea_id),
