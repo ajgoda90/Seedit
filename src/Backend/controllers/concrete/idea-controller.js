@@ -55,7 +55,9 @@ Idea.prototype.updateIdea = function() {
   var ideaModel = this.ideaModel;
   this.app.put('/ideas/:ideaID', function(req, res) {
     var idea_id = req.param("ideaID");
-    ideaModel.updateIdea(req.body, function(err, idea){
+    var idea_json = req.body;
+    idea_json.idea_id = idea_id;
+    ideaModel.updateIdea(idea_json, function(err, idea){
       if (!err){
         res.end(JSON.stringify(idea));
       }

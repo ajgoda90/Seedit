@@ -54,11 +54,12 @@ IdeaModel.prototype.getIdea = function(idea_id, cb) {
 
 IdeaModel.prototype.updateIdea = function(json_object, cb) {
   this.ideaEntity.update(json_object, function(err, idea){
+    console.log(json_object);
   	if(!err){
   		cb(null, idea);
   	}
   	else{
-  		cb(new Error('unable to update single idea'), null);
+  		cb(new Error('unable to update single idea: ' + err.toString()), null);
   	}
   });
 }
