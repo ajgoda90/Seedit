@@ -69,15 +69,18 @@ Idea.prototype.updateIdea = function() {
 }
 
 Idea.prototype.upVoteIdea = function() {
+  var ideaModel = this.ideaModel;
   this.app.post('/ideas/:ideaID/up-vote', function(req, res) {
-    var response = {
-      url : req.protocol + '://' + req.get('host') + req.originalUrl,
-      type : req.method,
-      query : req.query,
-      params : req.params,
-      body : req.body
-    }
-    res.send(JSON.stringify(response));
+    var idea_id = req.param("ideaID");
+    var timeStamp = new Date().toISOString().slice(0, 19).replace('T', ' ');
+    ideaModel.upVoteIdea(idea_id, req.body.voter_user_id, timeStamp, function(err, upVote){
+      if (!err){
+        res.end(JSON.stringify(upVote));
+      }
+      else {
+        res.end(err.toString());
+      }
+    });
   });
 }
 
