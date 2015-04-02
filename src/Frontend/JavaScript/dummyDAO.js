@@ -49,6 +49,18 @@ dummyDAO.factory('api',function(){
         {"tags":[{"tagid":444,"tagName":"swimming"},{"tagid":5435,"tagName":"cricket"}], "upvoted":false, "upvotes":300, "ranking":9, "seedID":1, "seedTitle":"Tailgate Hammocks", "seedImageURL":"http://students.cs.byu.edu/~tbell22/cs428/images/tailgate-hammocks.jpg", "seedDescription":"Tailgate, camp, sleep in style. Check these out.", "numberOfBranches":1584738},
         {"tags":[{"tagid":444,"tagName":"swimming"},{"tagid":5435,"tagName":"cricket"}], "upvoted":false, "upvotes":200, "ranking":10, "seedID":4324, "seedTitle":"Transparent Hole Punch", "seedImageURL":"http://students.cs.byu.edu/~tbell22/cs428/images/transparent-hole-punch.jpg", "seedDescription":"Are you sick of punching holes in the wrong spot? I am!", "numberOfBranches":15}
     ];
+    var seedsTrending = [
+        {"tags":[{"tagid":444,"tagName":"Rocket"},{"tagid":5435,"tagName":"solar"}], "upvoted":true, "upvotes":3, "ranking":1, "seedID":35, "seedTitle":"Rocket Ship", "seedImageURL":"https://static.spark.autodesk.com/2012/08/15__00_19_43/10475_RocketShip_wire.jpg942d3366-cc29-4e56-97e7-3405c0ad14eeLarge.jpg", "seedDescription":"Make a solar powered remote controlled Rocket that fits in your pocket!", "numberOfBranches":3},
+        {"tags":[{"tagid":444,"tagName":"swimming"},{"tagid":5435,"tagName":"cricket"}], "upvoted":false, "upvotes":1001, "ranking":2, "seedID":33, "seedTitle":"BYU Fake Beard Card", "seedImageURL":"https://students.cs.byu.edu/~tbell22/cs428/images/beardcard.jpg", "seedDescription":"Never shave again!", "numberOfBranches":1994},
+        {"tags":[{"tagid":444,"tagName":"swimming"},{"tagid":5435,"tagName":"cricket"}], "upvoted":false, "upvotes":900, "ranking":3, "seedID":24, "seedTitle":"Best Magic deck", "seedImageURL":"https://students.cs.byu.edu/~tbell22/cs428/images/magic-deck.jpg", "seedDescription":"The best deck in Magic, the Gathering.  Branch only if expert.", "numberOfBranches":229},
+        {"tags":[{"tagid":444,"tagName":"swimming"},{"tagid":5435,"tagName":"cricket"}], "upvoted":false, "upvotes":800, "ranking":4, "seedID":100, "seedTitle":"Toaster Dune Buggy", "seedImageURL":"http://students.cs.byu.edu/~tbell22/cs428/images/toaster-buggy-small.jpg", "seedDescription":"Toast your toast while roaming the wild desert dunes!", "numberOfBranches":5000000},
+        {"tags":[{"tagid":444,"tagName":"swimming"},{"tagid":5435,"tagName":"cricket"}], "upvoted":false, "upvotes":700, "ranking":5, "seedID":90, "seedTitle":"Arm Sleeper Pillow", "seedImageURL":"http://students.cs.byu.edu/~tbell22/cs428/images/arm-sleeper-pillow.jpg", "seedDescription":"Arm sleeper? Sleep no longer with a dead arm!", "numberOfBranches":0},
+        {"tags":[{"tagid":444,"tagName":"swimming"},{"tagid":5435,"tagName":"cricket"}], "upvoted":false, "upvotes":600, "ranking":6, "seedID":1002, "seedTitle":"Mop Flops", "seedImageURL":"http://students.cs.byu.edu/~tbell22/cs428/images/mop-shoes.jpg", "seedDescription":"Don't bend down to mop your floor ever again. What do you think about the mop flops?", "numberOfBranches":5030},
+        {"tags":[{"tagid":444,"tagName":"swimming"},{"tagid":5435,"tagName":"cricket"}], "upvoted":false, "upvotes":500, "ranking":7, "seedID":588, "seedTitle":"Pogo Shoes", "seedImageURL":"http://students.cs.byu.edu/~tbell22/cs428/images/pogo-shoe.jpg", "seedDescription":"Bounce around to get around", "numberOfBranches":392},
+        {"tags":[{"tagid":444,"tagName":"swimming"},{"tagid":5435,"tagName":"cricket"}], "upvoted":false, "upvotes":400, "ranking":8, "seedID":2433, "seedTitle":"Soda Spout", "seedImageURL":"http://students.cs.byu.edu/~tbell22/cs428/images/soda-spout.jpeg", "seedDescription":"Don't have to pick up the two liter to pour soda!", "numberOfBranches":1234},
+        {"tags":[{"tagid":444,"tagName":"swimming"},{"tagid":5435,"tagName":"cricket"}], "upvoted":false, "upvotes":300, "ranking":9, "seedID":1, "seedTitle":"Tailgate Hammocks", "seedImageURL":"http://students.cs.byu.edu/~tbell22/cs428/images/tailgate-hammocks.jpg", "seedDescription":"Tailgate, camp, sleep in style. Check these out.", "numberOfBranches":1584738},
+        {"tags":[{"tagid":444,"tagName":"swimming"},{"tagid":5435,"tagName":"cricket"}], "upvoted":false, "upvotes":200, "ranking":10, "seedID":4324, "seedTitle":"Transparent Hole Punch", "seedImageURL":"http://students.cs.byu.edu/~tbell22/cs428/images/transparent-hole-punch.jpg", "seedDescription":"Are you sick of punching holes in the wrong spot? I am!", "numberOfBranches":15}
+    ];
     var api = {};
     api.getTrendingTags = function(lowRange, highRange){
         return tags;
@@ -56,6 +68,9 @@ dummyDAO.factory('api',function(){
     api.getTopSeeds = function(lowRange, highRange){
         return seeds;
     }
+    api.getTrendingSeeds = function(lowRange, highRange){
+        return seedsTrending;
+    };
     api.addTag = function(tag) {
         tags.push(tag);
     }

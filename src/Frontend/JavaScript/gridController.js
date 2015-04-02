@@ -11,3 +11,9 @@ app.controller('gridController',['$scope', 'api',function($scope,api){
         'Y', 'Z'];
 
 }]);
+
+app.controller('gridController_Trending',['$scope', 'api',function($scope,api){
+
+    $scope.data = api.getTrendingSeeds(0,10);
+
+}]);

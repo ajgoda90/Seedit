@@ -4,18 +4,26 @@ $backgroundLight: #eee;
 $AccentColor: #251f81;//#CC5B1C;
 $HeaderColor:#71f15c;
 $LogoColor:#50cf31;
-$IndexBackground:#b9ffad;
+$IndexBackground: #e4e4e4;
 $BranchColor: rgba(37, 31, 129, 0.05);
 $BranchGlow: rgba(98, 255, 61, 0.65);
+$xsDevice:767px;
+html { overflow-y: auto; }
 body{
   background-color: $IndexBackground !important;
   overflow: hidden;
   color:$textDark;
-  position: fixed;
+//  position: fixed;
   top:0;
   bottom:0;
   left:0;
   right:0;
+
+  .trendingHeader{
+    font-size: 1.4em;
+    color:$textDark;
+    margin: 10px 0px 10px 10px;
+  }
   .tags {
     list-style: none;
     margin: 0;
@@ -32,7 +40,7 @@ body{
     line-height: 26px;
     padding: 0 20px 0 23px;
     position: relative;
-    margin: 0 10px 10px 0;
+    margin: 0 10px 10px 5px;
     text-decoration: none;
     -webkit-transition: color 0.2s;
   }
@@ -71,7 +79,7 @@ body{
 
 
   .mainWrapper{
-    width: 80%;
+    width: 95%;
     height: 100%;
     margin-left: auto;
     margin-right: auto;
@@ -168,7 +176,7 @@ body{
         background-color: #ffffff;
         border-radius: 5px;
         float:right;
-        margin-right: 4%;
+        margin-right: 2%;
         margin-top: 35px;
         line-height: 30px;
       }
@@ -203,15 +211,15 @@ body{
 
     #views{
       width:100%;
-      height:75%;
+      height:560px;
       .view1{
         width: 77%;
         display: inline-block;
-        height: 90%;
+        height: 95%;
         background-color: #ffffff;
 //        border: dashed 1px black;
         float: left;
-        overflow: scroll;
+        overflow-y: auto;
         overflow-x: hidden;
         table td {
           padding-left: 20px;
@@ -220,7 +228,8 @@ body{
       }
       .view2{
         width: 22%;
-        height:90%;
+        height:95%;
+        overflow-y: auto;
         display:inline-block;
         background-color: #ffffff;
 //        border: dashed 1px black;

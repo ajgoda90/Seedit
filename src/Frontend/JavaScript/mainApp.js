@@ -25,8 +25,8 @@ app.config(function($stateProvider, $urlRouterProvider ) {
 
                     // the child views will be defined here (absolutely named)
                     view1: {
-                        templateUrl: 'table-data.html',
-                        controller: 'seedController'
+                        templateUrl: 'grid.html',
+                        controller: 'gridController_Trending'
                     },
 
                     // for column two, we'll define a separate controller
