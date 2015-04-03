@@ -16,6 +16,7 @@ module.exports.init = function(app, mysqlDAO) {
   var ideaModel = new IdeaModel();
   var userModel = new UserModel();
   var upVoteModel;
+  var ideaModelForUserToUse;
   
   async.series([
   	function(next){
@@ -29,17 +30,17 @@ module.exports.init = function(app, mysqlDAO) {
     	}
   	  });
   	}
-	, function(next){
-    	entity.define("user", function (err, users) {
-    	if(!err) {
-      	  userModel.inject(users);
-      	  next();
-    	}
-    	else {
-      	  throw err;
-    	}
-  	  });
-    }
+	// , function(next){
+ //    	entity.define("user", function (err, users) {
+ //    	if(!err) {
+ //      	  userModel.inject(users);
+ //      	  next();
+ //    	}
+ //    	else {
+ //      	  throw err;
+ //    	}
+ //  	  });
+ //    }
     , function(next){
       entity.define("Up_Vote", function (err, upVotes) {
       if(!err) {
@@ -54,6 +55,7 @@ module.exports.init = function(app, mysqlDAO) {
     , function(next){
     	entity.define("idea", function (err, ideas) {
     	if(!err) {
+          ideaModelForUserToUse = ideas;
       	  ideaModel.inject(ideas, upVoteModel);
       	  next();
     	}
@@ -61,6 +63,17 @@ module.exports.init = function(app, mysqlDAO) {
       	  throw err;
     	}
   	  });
+    }
+    , function(next){
+        entity.define("user", function (err, users) {
+        if(!err) {
+          userModel.inject(users, ideaModelForUserToUse);
+          next();
+        }
+        else {
+          throw err;
+        }
+      });
     }
     
   ], function(err){

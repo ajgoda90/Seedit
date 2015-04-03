@@ -19,7 +19,7 @@ UserModel.prototype.login = function(username, password, cb) {
               cb(null, user);
             }
             else {
-              cb(null, { message : 'invalid username or password' });
+              cb(new Error('invalid username or password1'), null);
             }
           }
           else {
@@ -29,7 +29,7 @@ UserModel.prototype.login = function(username, password, cb) {
         });
       }
       else {
-        cb(null, { message : 'invalid username or password' });
+        cb(new Error('invalid username or password2'), null);
       }
     }
     else {
@@ -38,9 +38,6 @@ UserModel.prototype.login = function(username, password, cb) {
     }
   });
 }
-
-
-
 
 UserModel.prototype.addUser = function(first, last, email, username, password, cb) {
   var userEntity = this.userEntity;
@@ -76,6 +73,74 @@ UserModel.prototype.addUser = function(first, last, email, username, password, c
       cb(new Error('unable to generate salt'), null);
     }
   });
+}
+
+UserModel.prototype.getUser = function(username, cb) {
+    var userEntity = this.userEntity;
+    userEntity.getByUniqueColumn('username', username, function(err, user) {
+        if(!err) {
+            if(user) {
+                cb(null, user);
+            }
+            else {
+                cb(new Error('invalid username'), null);
+            }
+        }
+        else {
+            console.log(err.toString());
+            cb(new Error('unable to get user based on that username'), null);
+        }
+    });
+}
+
+UserModel.prototype.updateUser = function(json_object, cb) {
+    var userEntity = this.userEntity;
+    //maybe get user then compare hashed password to this one to see if same first
+    //i'm just rehashing there "new" password even though it might be the same
+    bcrypt.genSalt(hashFactor, function(err, salt) {
+        if(!err) {
+            bcrypt.hash(json_object.pass, salt, function(err, hash) {
+                if(!err) {
+                    json_object.pass = hash;
+                    userEntity.update(json_object, function(err, user) {
+                        if(!err) {
+                            if(user) {
+                                cb(null, user);
+                            }
+                            else {
+                                cb(new Error('invalid user'), null);
+                            }
+                        }
+                        else {
+                            console.log(err.toString());
+                            cb(new Error('error updating user'));
+                        }
+                    });
+                }
+                else {
+                    cb(new Error("couldn't hash the new password"));
+                }
+            });
+        }
+        else {
+            cb(new Error("error generating salt"));
+        }
+    });
+}
+
+UserModel.prototype.getUserIdeas = function(userID, cb) {
+    var ideaEntity = this.ideaEntity;
+    var statement = "Select * from Idea where author_user_id =?;"
+
+    ideaEntity.db.do(statement, userID, function(error, results) {
+        if(!error) {
+            cb(null, results);
+        }
+        else {
+            var err = new Error("unable to get user ideas" + "'\n" + 'Database error message: \n=>' + error);
+            cb(err, null);
+        }
+    });
 }
 
 module.exports = function() {
