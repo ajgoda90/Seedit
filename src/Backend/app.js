@@ -21,6 +21,7 @@ var userSessions = session({
 app.disable('x-powered-by');
 
 app.engine('html', ejs.renderFile);
+app.set('views', path.join(__dirname, 'frontend/HTML'));
 app.set('view engine', 'html');
 
 app.use(logger('dev'));
@@ -29,5 +30,6 @@ app.use(userSessions);
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'frontend')));
 
 module.exports = app;

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html >
+<head lang="en">
+    <meta charset="UTF-8">
+
+    <title>SeedIt</title>
+    <script src= "../Resources/angular.min.js"></script>
+    <script src="../Resources/angular-ui-router.min.js"></script>
+    <script src="../Resources/angular.filter.min.js"></script>
+    <script data-require="jquery@*" data-semver="2.1.1" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <script src="../JavaScript/mainApp.js"></script>
+    <script src="../JavaScript/mainController.js"></script>
+    <script src="../JavaScript/trendingController.js"></script>
+    <script src="../JavaScript/newIdeaController.js"></script>
+    <script src="../JavaScript/loginSignupController.js"></script>
+    <script src="../JavaScript/dummyDAO.js"></script>
+    <script src="../JavaScript/gridController.js"></script>
+
+    <!--<link rel="stylesheet" href="../Resources/font-awesome.min.css">-->
+    <link rel="stylesheet" type="text/css"  href="../CSS/style.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../Resources/bootstrap.min.css">
+</head>
+<body ng-app="mainApp">
+    <div class="mainWrapper" ng-controller="mainController">
+
+        <div id="header" >
+            <div class="logo" ui-sref="main.home" ng-click="alertEM('Yep, this is the logo')">
+            SeedIt
+            </div>
+            <div class="loginSignup" ui-sref="main.loginSignup">
+                Login/Sign-up
+            </div>
+        </div>
+        <div id="search">
+            <div class="newIdea" ui-sref="main.newIdea">
+                New Idea
+            </div>
+            <div class="largeBuffer">
+
+            </div>
+            <input class="searchBar" placeholder="Search..." ng-model="searchStr" ng-focus="goToState('main.search',{})">
+        </div>
+
+        <div  id="views" ui-view>
+            <div class="view1" ui-view="view1">
+
+            </div>
+            <div class="view2" ui-view="view2">
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
