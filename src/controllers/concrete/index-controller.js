@@ -23,6 +23,7 @@ Index.prototype.home = function() {
   });
 }
 
+/*
 Index.prototype.mainView = function() {
   this.app.get('/mainView.html', function(req, res) {
   	res.render('mainView');
@@ -34,11 +35,10 @@ Index.prototype.grid = function() {
     res.render('grid');
   });
 }
+*/
 
 Index.prototype.initRoutes= function() {
   this.home();
-  this.mainView();
-  this.grid();
 };
 
 module.exports = function(app) {
