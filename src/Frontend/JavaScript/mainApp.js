@@ -21,11 +21,11 @@ app.config(function($stateProvider, $urlRouterProvider ) {
                 views: {
 
                     // the main template will be placed here (relatively named)
-                    '': {templateUrl: 'mainView.html'},
+                    '': {templateUrl: '../HTML/mainView.html'},
 
                     // the child views will be defined here (absolutely named)
                     view1: {
-                        templateUrl: 'grid.html',
+                        templateUrl: '../HTML/grid.html',
                         controller: 'gridController_Trending'
                     },
 
@@ -42,7 +42,7 @@ app.config(function($stateProvider, $urlRouterProvider ) {
                 views: {
 
                     // the main template will be placed here (relatively named)
-                    '': {templateUrl: 'mainView.html'},
+                    '': {templateUrl: '../HTML/mainView.html'},
 
                     // the child views will be defined here (absolutely named)
                     view1: {
@@ -82,7 +82,7 @@ app.config(function($stateProvider, $urlRouterProvider ) {
                 views: {
 
                     // the main template will be placed here (relatively named)
-                    '': {templateUrl: 'mainView.html'},
+                    '': {templateUrl: '../HTML/mainView.html'},
 
                     // the child views will be defined here (absolutely named)
                     view1: {
@@ -102,7 +102,7 @@ app.config(function($stateProvider, $urlRouterProvider ) {
                 views: {
 
                     // the main template will be placed here (relatively named)
-                    '': {templateUrl: 'mainView.html'},
+                    '': {templateUrl: '../HTML/mainView.html'},
 
                     // the child views will be defined here (absolutely named)
                     view1: {
@@ -122,7 +122,7 @@ app.config(function($stateProvider, $urlRouterProvider ) {
             views: {
 
                 // the main template will be placed here (relatively named)
-                '': {templateUrl: 'mainView.html'},
+                '': {templateUrl: '../HTML/mainView.html'},
 
                 // the child views will be defined here (absolutely named)
                 view1: {
