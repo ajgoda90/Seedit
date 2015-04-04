@@ -117,9 +117,9 @@ app.config(function($stateProvider, $urlRouterProvider ) {
                     }
                 }
             }).state('main.seedview', {
-            url: '-seedview',
-            templateUrl: '../HTML/mainView.html',
-            views: {
+                url: '-seedview/:seedID',
+                templateUrl: '../HTML/mainView.html',
+                views: {
 
                 // the main template will be placed here (relatively named)
                 '': {templateUrl: '../HTML/mainView.html'},
@@ -135,8 +135,7 @@ app.config(function($stateProvider, $urlRouterProvider ) {
                     templateUrl: '../HTML/trending.html',
                     controller:'trendingController'
                 }
-            }
-        });
+            });
 });
 
             //.state('main.search',{

@@ -1,14 +1,15 @@
-<div class="newIdeaDiv" ng-controller="seeViewController as ctrl">
+<div class="newIdeaDiv" ng-controller="seedViewController as ctrl">
     <div class="container">
         <div class="row">
             <div class="newIdeaBody col-md-8">
-                <h3>Toaster Car <small>by Dante Exum</small></h3>
+                <h3>{{ctrl.currentSeed.seedTitle}} <small>by Dante Exum</small></h3>
                 <hr>
             </div>
         </div>
         <div class="row">
             <div class="seedFamilyHistory col-md-2">
-                <img src="../images/toastercar.jpg" style="width:170px; height:120px;"/>
+                <!--<img src="../images/toastercar.jpg" style="width:170px; height:120px;"/>-->
+                <img ng-src="{{ctrl.currentSeed.seedImageURL}}" style="width:170px; height:120px; margin-top: 12px"/>
                 <h4>Parent Idea</h4>
                 <a>Toy Toaster Car</a><br>
                 <br>
@@ -17,14 +18,12 @@
                 <a>Toaster Stick Shift</a><br>
                 <a>Motorcycle Toaster</a><br>
                 <a>Toast Food Truck</a><br>
+                <br>
+                <a class="btn btn-success" href="../HTML/fanchart.html">View Tree</a>
             </div>
             <div class="seedDescription col-md-6">
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-                    Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                    Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
-                    Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
-                    imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.
-                    Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.</p>
+                <h4>Seed Description</h4>
+                <p>{{ctrl.currentSeed.seedDescription}}</p>
                 <button class="btn btn-success">Start New Branch</button>
             </div>
         </div>

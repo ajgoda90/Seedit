@@ -4,7 +4,10 @@
 /**
  * Created by tbell on 3/7/15.
  */
-app.controller("newIdeaController", ['$scope','api', '$location', function($scope, api, $location) {
-    console.log("SeedViewController");
+app.controller("seedViewController", ['$scope','api', '$stateParams', function($scope, api, $stateParams) {
+
+    this.currentSeed = api.getSeedByID($stateParams.seedID);
+    console.log(this.currentSeed);
+
 }]);
 
