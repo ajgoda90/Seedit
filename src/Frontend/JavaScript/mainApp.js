@@ -132,8 +132,8 @@ app.config(function($stateProvider, $urlRouterProvider ) {
 
                 // for column two, we'll define a separate controller
                 view2: {
-                    templateUrl: '../HTML/trending.html',
-                    controller:'trendingController'
+                    templateUrl: '../HTML/seedview-sidebar.html',
+                    controller:'seedViewSidebarController'
                 }
             }
         });
