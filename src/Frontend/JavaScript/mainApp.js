@@ -135,7 +135,8 @@ app.config(function($stateProvider, $urlRouterProvider ) {
                     templateUrl: '../HTML/trending.html',
                     controller:'trendingController'
                 }
-            });
+            }
+        });
 });
 
             //.state('main.search',{
