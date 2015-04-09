@@ -16,6 +16,8 @@ dummyDAO.factory('api',function(){
         {"tagid":124,"tagName":"hockey","ranking":6},
         {"tagid":5435,"tagName":"cricket","ranking":7},
         {"tagid":444,"tagName":"swimming","ranking":8}
+        {"tagid":444,"tagName":"toasters","ranking":9}
+        {"tagid":444,"tagName":"grills","ranking":10}
     ];
 
     /*
