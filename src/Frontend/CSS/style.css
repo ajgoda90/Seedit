@@ -193,6 +193,8 @@ body {
         margin-bottom: 20px; }
       body .mainWrapper .newIdeaDiv hr {
         margin-bottom: 5px; }
+    body .mainWrapper #submit {
+      margin-bottom: 30px; }
   body .gridWrapper {
     padding: 3% 3% 0% 2.5%; }
     body .gridWrapper .gridElement {
