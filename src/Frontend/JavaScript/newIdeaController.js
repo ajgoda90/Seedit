@@ -3,7 +3,6 @@
  */
 app.controller("newIdeaController", ['$scope','api', '$location', function($scope, api, $location) {
     this.submitIdea = function() {
-        alert('Submitting idea');
         api.addSeed({
             "seedTitle":this.title,
             "seedDescription":this.description,
