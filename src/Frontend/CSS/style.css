@@ -19,7 +19,7 @@ body {
     overflow: hidden;
     padding: 1px; }
   body .tag {
-    background: #eee;
+    background: #eeeeee;
     border-radius: 3px 0 0 3px;
     color: #999;
     display: inline-block;
@@ -43,7 +43,7 @@ body {
   body .tag::after {
     background: #fff;
     border-bottom: 13px solid transparent;
-    border-left: 10px solid #eee;
+    border-left: 10px solid #eeeeee;
     border-top: 13px solid transparent;
     content: '';
     position: absolute;
@@ -66,12 +66,11 @@ body {
       border-top-left-radius: 5px;
       border-top-right-radius: 5px; }
       body .mainWrapper #header .logo {
-        width: 200px;
+        width: auto;
         display: inline-block;
         border-top-left-radius: 5px;
         max-width: 200px;
         min-height: 100px;
-        background-color: #50cf31;
         font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, FreeSerif, serif;
         font-size: 2em;
         color: white;
@@ -200,7 +199,7 @@ body {
     body .gridWrapper .gridElement {
       padding: 0px 0px 0px 0px !important; }
       body .gridWrapper .gridElement .gridElementWrapper {
-        background-color: #eee;
+        background-color: #eeeeee;
         border-radius: 10px;
         height: 300px;
         margin-left: 10%;
@@ -238,5 +237,3 @@ body {
         -webkit-box-shadow: 0px 0px 30px 0px rgba(98, 255, 61, 0.65);
         -moz-box-shadow: 0px 0px 30px 0px rgba(98, 255, 61, 0.65);
         box-shadow: 0px 0px 30px 0px rgba(98, 255, 61, 0.65); }
-
-/*# sourceMappingURL=style.css.map */
