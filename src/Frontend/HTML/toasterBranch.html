@@ -1,0 +1,40 @@
+<div class="newIdeaDiv" >
+    <div class="container">
+        <div class="row">
+            <div class="newIdeaBody col-md-4">
+                <div class="newIdeaHeader">
+                    <h3>Branch off this idea with your own</h3>
+                    <hr>
+                </div>
+                <div class="col-md-11">
+                    <h4>Branch Title</h4>
+                    <input type="text" class="form-control" ng-model="title" ng-change="">
+
+                    <h4>Give us a URL for your image</h4>
+                    <input type="text" class="form-control" ng-model="imageURL">
+
+                    <h4>Modify this idea</h4>
+                    <textarea class="form-control" ng-model="description"></textarea>
+
+                    <h4>Hashtag your idea for visibility</h4>
+                    <input type="text" class="form-control" ng-model="tags">
+
+                    <button class="btn btn-success" ng-click="submitIdea()">Seed It!</button>
+                </div>
+            </div>
+            <div class="newIdeaPreview col-md-4">
+                <div class="previewHeader">
+                    <h3>A preview of your idea:</h3>
+                    <hr>
+                </div>
+                <div class="newIdeaForm col-md-11">
+                    <h4>{{title}}</h4>
+                    <img class="newIdeaPreviewImage" fallback-src="../images/seed.jpg" ng-src="{{imageURL}}"/>
+                    <p class="newIdeaDescription">{{description}}</p>
+                    <p>{{tags}}</p>
+                </div>
+                <p style="color:#FFFFFF">http://students.cs.byu.edu/~tbell22/cs428/images/toaster-buggy-small.jpg</p>
+            </div>
+        </div>
+    </div>
+</div>

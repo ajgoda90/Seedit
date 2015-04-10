@@ -96,7 +96,47 @@ app.config(function($stateProvider, $urlRouterProvider ) {
                         controller:'trendingController'
                     }
                 }
-            }).state('main.loginSignup', {
+            }).state('main.BranchIdea', {
+            url: '-BranchIdea',
+            templateUrl: '../HTML/mainView.html',
+            views: {
+
+                // the main template will be placed here (relatively named)
+                '': {templateUrl: '../HTML/mainView.html'},
+
+                // the child views will be defined here (absolutely named)
+                view1: {
+                    templateUrl: '../HTML/BranchIdea.html',
+                    controller: 'branchController'
+                },
+
+                // for column two, we'll define a separate controller
+                view2: {
+                    templateUrl: '../HTML/trending.html',
+                    controller:'trendingController'
+                }
+            }
+        }).state('main.toasterBranch', {
+            url: '-toaster',
+            templateUrl: '../HTML/mainView.html',
+            views: {
+
+                // the main template will be placed here (relatively named)
+                '': {templateUrl: '../HTML/mainView.html'},
+
+                // the child views will be defined here (absolutely named)
+                view1: {
+                    templateUrl: '../HTML/toasterBranch.html',
+                    controller: 'toasterController'
+                },
+
+                // for column two, we'll define a separate controller
+                view2: {
+                    templateUrl: '../HTML/trending.html',
+                    controller:'trendingController'
+                }
+            }
+        }).state('main.loginSignup', {
             url: '-login-signup',
             templateUrl: '../HTML/mainView.html',
                 views: {
@@ -117,9 +157,9 @@ app.config(function($stateProvider, $urlRouterProvider ) {
                     }
                 }
             }).state('main.seedview', {
-            url: '-seedview',
-            templateUrl: '../HTML/mainView.html',
-            views: {
+                url: '-seedview/:seedID',
+                templateUrl: '../HTML/mainView.html',
+                views: {
 
                 // the main template will be placed here (relatively named)
                 '': {templateUrl: '../HTML/mainView.html'},
@@ -132,8 +172,8 @@ app.config(function($stateProvider, $urlRouterProvider ) {
 
                 // for column two, we'll define a separate controller
                 view2: {
-                    templateUrl: '../HTML/trending.html',
-                    controller:'trendingController'
+                    templateUrl: '../HTML/seedview-sidebar.html',
+                    controller:'seedViewSidebarController'
                 }
             }
         });
