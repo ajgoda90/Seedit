@@ -6,10 +6,16 @@ app.controller("toasterController", ['$scope','api', '$location', function($scop
     $scope.overlordData = api.getTopToasterSeeds();
 
     $scope.submitIdea = function() {
+        var id = api.getSeedID();
         api.addSeed({
             "seedTitle":this.title,
             "seedDescription":this.description,
-            "numberOfBranches":0
+            "numberOfBranches":0,
+            "seedImageURL":this.imageURL,
+            "tags":[{"tagid":444,"tagName":"toasters"}],
+            "upvoted":false,
+            "ranking":1,
+            "seedID":id
         });
 
         var hashtags = this.tags.split('#');

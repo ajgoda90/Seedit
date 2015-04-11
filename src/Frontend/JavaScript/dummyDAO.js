@@ -7,6 +7,8 @@
 var dummyDAO = angular.module('dummyDAO',[]);
 dummyDAO.factory('api',function(){
 
+    var seedID = 9000;
+
     var tags =  [
         {"tagid":5,"tagName":"cooking", "ranking":1},
         {"tagid":2,"tagName":"video games", "ranking":2},
@@ -52,6 +54,7 @@ dummyDAO.factory('api',function(){
     ];
 
     var toasterSeeds = [
+        {"tags":[{"tagid":444,"tagName":"swimming"},{"tagid":5435,"tagName":"cricket"}], "upvoted":false, "upvotes":800, "ranking":4, "seedID":2100, "seedTitle":"Toaster Dune Buggy", "seedImageURL":"http://i.kinja-img.com/gawker-media/image/upload/s--cqEPCl9P--/i8spuytumbm6ao1gi2sh.jpg", "seedDescription":"Toast your toast while roaming the wild desert dunes!", "numberOfBranches":20},
         {"tags":[{"tagid":444,"tagName":"toasters"},{"tagid":311,"tagName":"toasters"}], "upvoted":false, "upvotes":6, "ranking":11, "seedID":2001, "seedTitle":"Toaster backpack", "seedImageURL":"http://students.cs.byu.edu/~jbh52/cs428/backpack-toaster.jpeg", "seedDescription":"This backpack will enable its carrier to make delicious toast regardless if you're home or on the road. Booyah!", "numberOfBranches":2},
         {"tags":[{"tagid":444,"tagName":"toasters"},{"tagid":312,"tagName":"toasters"}], "upvoted":false, "upvotes":7, "ranking":12, "seedID":2002, "seedTitle":"Toaster in Lazy Boy", "seedImageURL":"http://students.cs.byu.edu/~jbh52/cs428/toaster-recliner.png", "seedDescription":"There's only one thing better watching the game in a Lazy Boy recliner, and that's eating toast whilst watching the game in a Lazy Boy", "numberOfBranches":2},
         {"tags":[{"tagid":444,"tagName":"toasters"},{"tagid":313,"tagName":"toasters"}], "upvoted":false, "upvotes":8, "ranking":13, "seedID":2003, "seedTitle":"Toaster in motorcycle", "seedImageURL":"http://students.cs.byu.edu/~jbh52/cs428/motorcycle-toaster.jpg", "seedDescription":"Get your motor running, head out on the highway! There's nothing more wild than a toaster in your motorcycle", "numberOfBranches":15},
@@ -139,14 +142,22 @@ dummyDAO.factory('api',function(){
     }
 
     api.getSeedByID = function(seedID) {
-        var i=0, len=seeds.length;
-        for (; i<len; i++) {
+        for (var j=0; j<seeds.length; j++) {
+            if (toasterSeeds[j].seedID == seedID) {
+                return toasterSeeds[j];
+            }
+        }
+        for (var i=0; i<seeds.length; i++) {
             if (seeds[i].seedID == seedID) {
                 return seeds[i];
             }
         }
         return null;
     }
+api.getSeedID = function(){
+    this.seedID++;
+    return this.seedID;
+}
 
     return api;
 });
