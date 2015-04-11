@@ -7,19 +7,26 @@ app.controller("newIdeaController", ['$scope','api', '$location', function($scop
         api.addSeed({
             "seedTitle":this.title,
             "seedDescription":this.description,
-            "numberOfBranches":0
+            "numberOfBranches":0,
+            "tags":[{"tagid":444,"tagName":"toaster car"}, {"tagid":5435,"tagName":"toast"}],
+            "upvoted":false,
+            "upvotes":800,
+            "ranking":4,
+            "seedID":100,
+            "seedImageURL":this.imageURL,
+            "numberOfBranches":5000000
         });
 
-        var hashtags = this.tags.split('#');
-
-        for (var i = 0; i < hashtags.length; i++) {
-            var tag = hashtags[i].trim();
-            api.addTag({
-                "tagName": tag,
-                "frequency": 1,
-                "hyperlink": "www.google.com"
-            });
-        }
+        //var hashtags = this.tags.split('#');
+        //
+        //for (var i = 0; i < hashtags.length; i++) {
+        //    var tag = hashtags[i].trim();
+        //    api.addTag({
+        //        "tagName": tag,
+        //        "frequency": 1,
+        //        "hyperlink": "www.google.com"
+        //    });
+        //}
 
         $location.path( '/main-home' );
     }

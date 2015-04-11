@@ -1,3 +1,3 @@
-app.controller("newIdeaController", ['$scope','api', '$location', function($scope, api, $location) {
+app.controller("loginSignupController", ['$scope','api', '$location', function($scope, api, $location) {
 
 }]);

@@ -3,6 +3,6 @@
             What's Trending:
         </div>
         <ul class="tags">
-            <li ng-repeat="row in ctrl.data"><a href="#" class="tag">{{row.tagName}}</a></li>
+            <li ng-repeat="row in ctrl.data" ng-click="ctrl.showRelatedIdeas(row.tagName)"><a href="#" class="tag">{{row.tagName}}</a></li>
         </ul>
 </div>
