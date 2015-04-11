@@ -176,6 +176,26 @@ app.config(function($stateProvider, $urlRouterProvider ) {
                     controller:'seedViewSidebarController'
                 }
             }
+        }).state('main.toasterGrid', {
+            url: '-search-toaster',
+            templateUrl: '../HTML/mainView.html',
+            views: {
+
+                // the main template will be placed here (relatively named)
+                '': {templateUrl: 'mainView.html'},
+
+                // the child views will be defined here (absolutely named)
+                view1: {
+                    templateUrl: '../HTML/toasterGrid.html',
+                    controller: 'toasterController'
+                },
+
+                // for column two, we'll define a separate controller
+                view2: {
+                    templateUrl: 'trending.html'
+                }
+            }
+
         });
 });
 

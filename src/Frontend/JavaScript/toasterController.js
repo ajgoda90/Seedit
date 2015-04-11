@@ -3,7 +3,7 @@ app.controller("toasterController", ['$scope','api', '$location', function($scop
     $scope.description = "A toaster in your car so that you can have breakfast on the go!";
     $scope.imageURL ="http://i.kinja-img.com/gawker-media/image/upload/s--cqEPCl9P--/i8spuytumbm6ao1gi2sh.jpg";
     $scope.tags ="#toast #toaster #car";
-
+    $scope.overlordData = api.getTopToasterSeeds();
 
     $scope.submitIdea = function() {
         api.addSeed({
